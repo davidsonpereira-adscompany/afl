@@ -82,7 +82,7 @@
     /* Tabelas */
     .obj-table th    { background: #eee !important; color: #333 !important; }
     .obj-table td    { color: #111 !important; border-bottom-color: #ddd !important; }
-    .obj-table input { background: #f5f5f5 !important; color: #111 !important; border-color: transparent !important; }
+    .obj-table input, .obj-table textarea { background: #f5f5f5 !important; color: #111 !important; border-color: transparent !important; }
     .obj-table input::placeholder { color: #bbb !important; }
     .obj-table td:first-child { color: #FF5C00 !important; }
 
@@ -174,6 +174,22 @@
     outline: none;
   }
   .obj-table input:focus { border-color: var(--laranja); background: var(--cinza-escuro); }
+  .obj-table textarea {
+    width: 100%;
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 10px;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--branco);
+    font-weight: 300;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    display: block;
+    line-height: 1.5;
+  }
+  .obj-table textarea:focus { border-color: var(--laranja); background: var(--cinza-escuro); }
   .obj-table input::placeholder { color: rgba(255,255,255,0.2); font-style: italic; }
 
   /* Scale */
@@ -240,9 +256,9 @@
   <div class="section-tag">01 &mdash; Vis&atilde;o Geral</div>
   <h2>Sobre o <em>projeto</em></h2>
   <div class="field"><div class="field-label">Nome do projeto</div><input class="field-input" type="text" value="AFL &mdash; Avante Ferramentas Locadora" placeholder="Ex: ADS Company"></div>
-  <div class="field"><div class="field-label">O que &eacute;</div><input class="field-input" type="text" value="Locadora de equipamentos e ferramentas para constru&ccedil;&atilde;o civil em Barreiras-BA: betoneira, andaime, balancim, compactador, martelete e mais" placeholder="Descreva em 1 frase o que &eacute; o seu produto/servi&ccedil;o"></div>
-  <div class="field"><div class="field-label">Resultado que entrega</div><input class="field-input" type="text" value="Toca a obra sem imobilizar dinheiro em equipamento: aluga o que precisa, pelo tempo que precisa, com entrega na obra" placeholder="Qual transforma&ccedil;&atilde;o o cliente tem?"></div>
-  <div class="field"><div class="field-label">Formato</div><input class="field-input" type="text" value="Servi&ccedil;o local de loca&ccedil;&atilde;o por di&aacute;ria, semana ou m&ecirc;s" placeholder="Curso, mentoria, servi&ccedil;o, produto digital, SaaS..."></div>
+  <div class="field"><div class="field-label">O que &eacute;</div><textarea class="field-textarea" style="min-height:0;" placeholder="Descreva em 1 frase o que &eacute; o seu produto/servi&ccedil;o">Locadora de equipamentos e ferramentas para constru&ccedil;&atilde;o civil em Barreiras-BA: betoneira, andaime, balancim, compactador, martelete e mais</textarea></div>
+  <div class="field"><div class="field-label">Resultado que entrega</div><textarea class="field-textarea" style="min-height:0;" placeholder="Qual transforma&ccedil;&atilde;o o cliente tem?">Toca a obra sem imobilizar dinheiro em equipamento: aluga o que precisa, pelo tempo que precisa, com entrega na obra</textarea></div>
+  <div class="field"><div class="field-label">Formato</div><textarea class="field-textarea" style="min-height:0;" placeholder="Curso, mentoria, servi&ccedil;o, produto digital, SaaS...">Servi&ccedil;o local de loca&ccedil;&atilde;o por di&aacute;ria, semana ou m&ecirc;s</textarea></div>
 </div>
 
 <div class="divider"></div>
@@ -252,8 +268,8 @@
   <div class="section-tag">02 &mdash; P&uacute;blico-Alvo</div>
   <h2>Quem &eacute; o <em>cliente ideal</em></h2>
   <div class="field-grid">
-    <div class="field"><div class="field-label">Cliente ideal</div><input class="field-input" type="text" value="Mestres de obras, pedreiros, pequenos construtores e donos de obra pr&oacute;pria, 25&ndash;55 anos, Barreiras-BA e regi&atilde;o" placeholder="Quem &eacute;? (profiss&atilde;o, idade, situa&ccedil;&atilde;o)"></div>
-    <div class="field"><div class="field-label">Profiss&atilde;o / perfil</div><input class="field-input" type="text" value="Toca obras e reformas para terceiros ou para a pr&oacute;pria fam&iacute;lia; decide r&aacute;pido e compara pre&ccedil;o pelo WhatsApp" placeholder="O que faz no dia a dia?"></div>
+    <div class="field"><div class="field-label">Cliente ideal</div><textarea class="field-textarea" style="min-height:0;" placeholder="Quem &eacute;? (profiss&atilde;o, idade, situa&ccedil;&atilde;o)">Mestres de obras, pedreiros, pequenos construtores e donos de obra pr&oacute;pria, 25&ndash;55 anos, Barreiras-BA e regi&atilde;o</textarea></div>
+    <div class="field"><div class="field-label">Profiss&atilde;o / perfil</div><textarea class="field-textarea" style="min-height:0;" placeholder="O que faz no dia a dia?">Toca obras e reformas para terceiros ou para a pr&oacute;pria fam&iacute;lia; decide r&aacute;pido e compara pre&ccedil;o pelo WhatsApp</textarea></div>
   </div>
   <div class="field"><div class="field-label">Dor principal</div><textarea class="field-textarea" placeholder="Qual o maior problema que sente hoje?">Precisa do equipamento certo na hora certa e n&atilde;o pode imobilizar dinheiro comprando betoneira, andaime ou compactador que vai usar por poucos dias. Obra parada &eacute; preju&iacute;zo todo dia, e improvisar (escora de madeira, mistura manual) gera risco e retrabalho.</textarea></div>
   <div class="field"><div class="field-label">Desejo mais forte</div><textarea class="field-textarea" placeholder="O que mais quer conquistar?">Terminar a obra no prazo, gastando menos, com equipamento revisado e funcionando &mdash; sem burocracia e sem dor de cabe&ccedil;a.</textarea></div>
@@ -271,11 +287,11 @@
   <h2>O que voc&ecirc; <em>vende</em></h2>
   <div class="field"><div class="field-label">Nome da oferta</div><input class="field-input" type="text" value="Loca&ccedil;&atilde;o de equipamentos AFL" placeholder="Nome do produto/servi&ccedil;o"></div>
   <div class="field-grid">
-    <div class="field"><div class="field-label">Pre&ccedil;o</div><input class="field-input" type="text" value="A partir de R$ 35/di&aacute;ria &middot; betoneira R$ 100 &middot; martelete R$ 85 &middot; perfurador de solo R$ 120 &middot; compactador R$ 180 &middot; balancim a partir de R$ 1.500" placeholder="R$ ___"></div>
-    <div class="field"><div class="field-label">Garantia</div><input class="field-input" type="text" value="Equipamento sai revisado; troca em caso de defeito (confirmar pol&iacute;tica com o cliente)" placeholder="___ dias / sem garantia"></div>
+    <div class="field"><div class="field-label">Pre&ccedil;o</div><textarea class="field-textarea" style="min-height:0;" placeholder="R$ ___">A partir de R$ 35/di&aacute;ria &middot; betoneira R$ 100 &middot; martelete R$ 85 &middot; perfurador de solo R$ 120 &middot; compactador R$ 180 &middot; balancim a partir de R$ 1.500</textarea></div>
+    <div class="field"><div class="field-label">Garantia</div><textarea class="field-textarea" style="min-height:0;" placeholder="___ dias / sem garantia">Equipamento sai revisado; troca em caso de defeito (confirmar pol&iacute;tica com o cliente)</textarea></div>
   </div>
   <div class="field"><div class="field-label">O que est&aacute; incluso</div><textarea class="field-textarea" placeholder="Liste tudo que o cliente recebe">Equipamento revisado e pronto para uso, orienta&ccedil;&atilde;o de uso na retirada/entrega, loca&ccedil;&atilde;o flex&iacute;vel por di&aacute;ria, semana ou m&ecirc;s e atendimento direto pelo WhatsApp. Entrega na obra (confirmar condi&ccedil;&otilde;es e raio de atendimento).</textarea></div>
-  <div class="field"><div class="field-label">B&ocirc;nus diferencial</div><input class="field-input" type="text" value="Entrega r&aacute;pida na obra + atendimento direto dos donos, sem intermedi&aacute;rio" placeholder="Algo extra que s&oacute; voc&ecirc; oferece"></div>
+  <div class="field"><div class="field-label">B&ocirc;nus diferencial</div><textarea class="field-textarea" style="min-height:0;" placeholder="Algo extra que s&oacute; voc&ecirc; oferece">Entrega r&aacute;pida na obra + atendimento direto dos donos, sem intermedi&aacute;rio</textarea></div>
 </div>
 
 <div class="divider"></div>
@@ -287,11 +303,11 @@
   <table class="obj-table">
     <thead><tr><th>#</th><th>Obje&ccedil;&atilde;o</th><th>Sua resposta</th><th>Prova</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td><input type="text" value="Alugar sai caro"></td><td><input type="text" value="A di&aacute;ria custa uma fra&ccedil;&atilde;o do pre&ccedil;o do equipamento, sem manuten&ccedil;&atilde;o nem deprecia&ccedil;&atilde;o"></td><td><input type="text" value="Comparativo: betoneira R$ 100/di&aacute;ria contra R$ 3.000+ para comprar"></td></tr>
-      <tr><td>2</td><td><input type="text" value="E se quebrar na minha m&atilde;o?"></td><td><input type="text" value="Todo equipamento sai revisado e com orienta&ccedil;&atilde;o de uso; deu defeito, a AFL troca"></td><td><input type="text" value="Pol&iacute;tica de troca + v&iacute;deos dos equipamentos funcionando"></td></tr>
-      <tr><td>3</td><td><input type="text" value="Ser&aacute; que tem dispon&iacute;vel quando eu precisar?"></td><td><input type="text" value="Estoque mostrado todo dia no Instagram e resposta imediata no WhatsApp"></td><td><input type="text" value="Destaque &lsquo;Dispon&iacute;veis&rsquo; sempre atualizado"></td></tr>
-      <tr><td>4</td><td><input type="text" value="N&atilde;o tenho como buscar o equipamento"></td><td><input type="text" value="A AFL entrega r&aacute;pido direto na obra"></td><td><input type="text" value="V&iacute;deos reais de entrega em obras de Barreiras"></td></tr>
-      <tr><td>5</td><td><input type="text" value="Prefiro comprar, uso sempre"></td><td><input type="text" value="Para uso di&aacute;rio, comprar faz sentido; para uso pontual, alugar libera o dinheiro para a obra"></td><td><input type="text" value="Conta simples de custo por uso apresentada no conte&uacute;do"></td></tr>
+      <tr><td>1</td><td><textarea rows="2">Alugar sai caro</textarea></td><td><textarea rows="2">A di&aacute;ria custa uma fra&ccedil;&atilde;o do pre&ccedil;o do equipamento, sem manuten&ccedil;&atilde;o nem deprecia&ccedil;&atilde;o</textarea></td><td><textarea rows="2">Comparativo: betoneira R$ 100/di&aacute;ria contra R$ 3.000+ para comprar</textarea></td></tr>
+      <tr><td>2</td><td><textarea rows="2">E se quebrar na minha m&atilde;o?</textarea></td><td><textarea rows="2">Todo equipamento sai revisado e com orienta&ccedil;&atilde;o de uso; deu defeito, a AFL troca</textarea></td><td><textarea rows="2">Pol&iacute;tica de troca + v&iacute;deos dos equipamentos funcionando</textarea></td></tr>
+      <tr><td>3</td><td><textarea rows="2">Ser&aacute; que tem dispon&iacute;vel quando eu precisar?</textarea></td><td><textarea rows="2">Estoque mostrado todo dia no Instagram e resposta imediata no WhatsApp</textarea></td><td><textarea rows="2">Destaque &lsquo;Dispon&iacute;veis&rsquo; sempre atualizado</textarea></td></tr>
+      <tr><td>4</td><td><textarea rows="2">N&atilde;o tenho como buscar o equipamento</textarea></td><td><textarea rows="2">A AFL entrega r&aacute;pido direto na obra</textarea></td><td><textarea rows="2">V&iacute;deos reais de entrega em obras de Barreiras</textarea></td></tr>
+      <tr><td>5</td><td><textarea rows="2">Prefiro comprar, uso sempre</textarea></td><td><textarea rows="2">Para uso di&aacute;rio, comprar faz sentido; para uso pontual, alugar libera o dinheiro para a obra</textarea></td><td><textarea rows="2">Conta simples de custo por uso apresentada no conte&uacute;do</textarea></td></tr>
     </tbody>
   </table>
 </div>
@@ -305,9 +321,9 @@
   <table class="obj-table">
     <thead><tr><th>#</th><th>Concorrente</th><th>O que faz bem</th><th>O que falta</th><th>Seu diferencial</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td><input type="text" value="Locadoras tradicionais da regi&atilde;o"></td><td><input type="text" value="Estrutura e variedade de equipamentos"></td><td><input type="text" value="Atendimento lento e quase nenhuma presen&ccedil;a digital"></td><td><input type="text" value="Resposta na hora no WhatsApp + estoque vis&iacute;vel no Instagram"></td></tr>
-      <tr><td>2</td><td><input type="text" value="Comprar o equipamento (lojas de material)"></td><td><input type="text" value="O cliente fica com o bem"></td><td><input type="text" value="Imobiliza capital, exige manuten&ccedil;&atilde;o e deprecia"></td><td><input type="text" value="Pre&ccedil;o justo por uso, sem custo de manuten&ccedil;&atilde;o"></td></tr>
-      <tr><td>3</td><td><input type="text" value="Improviso e empr&eacute;stimo (escora de madeira, mistura manual)"></td><td><input type="text" value="Custo zero aparente"></td><td><input type="text" value="Risco de acidente, retrabalho e obra mais lenta"></td><td><input type="text" value="Seguran&ccedil;a e produtividade com o equipamento certo"></td></tr>
+      <tr><td>1</td><td><textarea rows="2">Locadoras tradicionais da regi&atilde;o</textarea></td><td><textarea rows="2">Estrutura e variedade de equipamentos</textarea></td><td><textarea rows="2">Atendimento lento e quase nenhuma presen&ccedil;a digital</textarea></td><td><textarea rows="2">Resposta na hora no WhatsApp + estoque vis&iacute;vel no Instagram</textarea></td></tr>
+      <tr><td>2</td><td><textarea rows="2">Comprar o equipamento (lojas de material)</textarea></td><td><textarea rows="2">O cliente fica com o bem</textarea></td><td><textarea rows="2">Imobiliza capital, exige manuten&ccedil;&atilde;o e deprecia</textarea></td><td><textarea rows="2">Pre&ccedil;o justo por uso, sem custo de manuten&ccedil;&atilde;o</textarea></td></tr>
+      <tr><td>3</td><td><textarea rows="2">Improviso e empr&eacute;stimo (escora de madeira, mistura manual)</textarea></td><td><textarea rows="2">Custo zero aparente</textarea></td><td><textarea rows="2">Risco de acidente, retrabalho e obra mais lenta</textarea></td><td><textarea rows="2">Seguran&ccedil;a e produtividade com o equipamento certo</textarea></td></tr>
     </tbody>
   </table>
 </div>
@@ -318,11 +334,11 @@
 <div class="section">
   <div class="section-tag">06 &mdash; &Acirc;ngulos de Campanha</div>
   <h2>Formas de <em>abordar</em> o p&uacute;blico</h2>
-  <div class="field"><div class="field-label">&Acirc;ngulo de Dor</div><input class="field-input" type="text" value="Quantos dias de obra voc&ecirc; j&aacute; perdeu esperando equipamento aparecer?" placeholder="Explora o problema. Ex: 'Voc&ecirc; est&aacute; cansado de...'"></div>
-  <div class="field"><div class="field-label">&Acirc;ngulo de Desejo</div><input class="field-input" type="text" value="Imagine a betoneira chegando na sua obra hoje, pelo pre&ccedil;o de uma di&aacute;ria." placeholder="Pinta o futuro. Ex: 'Imagine quando...'"></div>
-  <div class="field"><div class="field-label">&Acirc;ngulo de Prova</div><input class="field-input" type="text" value="Mais uma entrega feita em Barreiras: equipamento na obra no mesmo dia." placeholder="Mostra resultados. Ex: 'Fulano conseguiu...'"></div>
-  <div class="field"><div class="field-label">&Acirc;ngulo de Urg&ecirc;ncia</div><input class="field-input" type="text" value="Obra parada &eacute; dinheiro indo embora todo dia. Resolve hoje pelo WhatsApp." placeholder="Por que agora. Ex: 'O mercado est&aacute; mudando...'"></div>
-  <div class="field"><div class="field-label">&Acirc;ngulo de Curiosidade</div><input class="field-input" type="text" value="O jeito de tocar obra em Barreiras sem precisar comprar um equipamento sequer." placeholder="Mecanismo &uacute;nico. Ex: 'O m&eacute;todo que...'"></div>
+  <div class="field"><div class="field-label">&Acirc;ngulo de Dor</div><textarea class="field-textarea" style="min-height:0;" placeholder="Explora o problema. Ex: 'Voc&ecirc; est&aacute; cansado de...'">Quantos dias de obra voc&ecirc; j&aacute; perdeu esperando equipamento aparecer?</textarea></div>
+  <div class="field"><div class="field-label">&Acirc;ngulo de Desejo</div><textarea class="field-textarea" style="min-height:0;" placeholder="Pinta o futuro. Ex: 'Imagine quando...'">Imagine a betoneira chegando na sua obra hoje, pelo pre&ccedil;o de uma di&aacute;ria.</textarea></div>
+  <div class="field"><div class="field-label">&Acirc;ngulo de Prova</div><textarea class="field-textarea" style="min-height:0;" placeholder="Mostra resultados. Ex: 'Fulano conseguiu...'">Mais uma entrega feita em Barreiras: equipamento na obra no mesmo dia.</textarea></div>
+  <div class="field"><div class="field-label">&Acirc;ngulo de Urg&ecirc;ncia</div><textarea class="field-textarea" style="min-height:0;" placeholder="Por que agora. Ex: 'O mercado est&aacute; mudando...'">Obra parada &eacute; dinheiro indo embora todo dia. Resolve hoje pelo WhatsApp.</textarea></div>
+  <div class="field"><div class="field-label">&Acirc;ngulo de Curiosidade</div><textarea class="field-textarea" style="min-height:0;" placeholder="Mecanismo &uacute;nico. Ex: 'O m&eacute;todo que...'">O jeito de tocar obra em Barreiras sem precisar comprar um equipamento sequer.</textarea></div>
 </div>
 
 <div class="divider"></div>
@@ -334,7 +350,7 @@
   <div class="field"><div class="field-label">Promessa central</div><textarea class="field-textarea" placeholder="A promessa principal da sua oferta">O equipamento certo na sua obra, no dia em que voc&ecirc; precisa, por um pre&ccedil;o que cabe no or&ccedil;amento da obra.</textarea></div>
   <div class="field"><div class="field-label">Sub-promessa 1</div><input class="field-input" type="text" value="Atendimento imediato pelo WhatsApp, direto com quem resolve" placeholder="Benef&iacute;cio espec&iacute;fico"></div>
   <div class="field"><div class="field-label">Sub-promessa 2</div><input class="field-input" type="text" value="Equipamento revisado e pronto para uso, sem surpresa" placeholder="Benef&iacute;cio espec&iacute;fico"></div>
-  <div class="field"><div class="field-label">Sub-promessa 3</div><input class="field-input" type="text" value="Di&aacute;ria, semana ou m&ecirc;s: paga s&oacute; pelo tempo que usa" placeholder="Benef&iacute;cio espec&iacute;fico"></div>
+  <div class="field"><div class="field-label">Sub-promessa 3</div><textarea class="field-textarea" style="min-height:0;" placeholder="Benef&iacute;cio espec&iacute;fico">Di&aacute;ria, semana ou m&ecirc;s: paga s&oacute; pelo tempo que usa</textarea></div>
 </div>
 
 <div class="divider"></div>
@@ -344,8 +360,8 @@
   <div class="section-tag">08 &mdash; Provas</div>
   <h2>Por que devem <em>acreditar</em></h2>
   <div class="field"><div class="field-label">Depoimentos de clientes</div><textarea class="field-textarea" placeholder="Liste depoimentos reais (ou marque 'a preencher')">A coletar com clientes atuais: prints de conversas no WhatsApp e v&iacute;deos curtos gravados na entrega do equipamento na obra.</textarea></div>
-  <div class="field"><div class="field-label">Resultados num&eacute;ricos</div><input class="field-input" type="text" value="A levantar com o cliente: loca&ccedil;&otilde;es/m&ecirc;s, obras atendidas e tempo m&eacute;dio de entrega" placeholder="N&uacute;meros concretos que provam"></div>
-  <div class="field"><div class="field-label">Credenciais do expert</div><input class="field-input" type="text" value="Loja f&iacute;sica em Barreiras-BA com os s&oacute;cios &agrave; frente do atendimento (fachada e rostos j&aacute; p&uacute;blicos no perfil)" placeholder="Sua experi&ecirc;ncia, forma&ccedil;&atilde;o, resultados"></div>
+  <div class="field"><div class="field-label">Resultados num&eacute;ricos</div><textarea class="field-textarea" style="min-height:0;" placeholder="N&uacute;meros concretos que provam">A levantar com o cliente: loca&ccedil;&otilde;es/m&ecirc;s, obras atendidas e tempo m&eacute;dio de entrega</textarea></div>
+  <div class="field"><div class="field-label">Credenciais do expert</div><textarea class="field-textarea" style="min-height:0;" placeholder="Sua experi&ecirc;ncia, forma&ccedil;&atilde;o, resultados">Loja f&iacute;sica em Barreiras-BA com os s&oacute;cios &agrave; frente do atendimento (fachada e rostos j&aacute; p&uacute;blicos no perfil)</textarea></div>
 </div>
 
 <div class="divider"></div>
@@ -354,9 +370,9 @@
 <div class="section">
   <div class="section-tag">09 &mdash; Mecanismo &Uacute;nico</div>
   <h2>O m&eacute;todo que <em>faz funcionar</em></h2>
-  <div class="field"><div class="field-label">Nome do m&eacute;todo</div><input class="field-input" type="text" value="Aluguel sem complica&ccedil;&atilde;o: escolheu, chamou, recebeu" placeholder="Como se chama o seu sistema/framework"></div>
+  <div class="field"><div class="field-label">Nome do m&eacute;todo</div><textarea class="field-textarea" style="min-height:0;" placeholder="Como se chama o seu sistema/framework">Aluguel sem complica&ccedil;&atilde;o: escolheu, chamou, recebeu</textarea></div>
   <div class="field"><div class="field-label">Por que funciona</div><textarea class="field-textarea" placeholder="Explique a l&oacute;gica por tr&aacute;s">Elimina as tr&ecirc;s travas de quem precisa de equipamento: capital (n&atilde;o precisa comprar), tempo (entrega r&aacute;pida na obra) e risco (equipamento revisado, com troca garantida e suporte direto dos donos).</textarea></div>
-  <div class="field"><div class="field-label">Diferencial</div><input class="field-input" type="text" value="Atendimento direto dos donos + estoque mostrado em tempo real no Instagram" placeholder="O que tem de diferente dos outros"></div>
+  <div class="field"><div class="field-label">Diferencial</div><textarea class="field-textarea" style="min-height:0;" placeholder="O que tem de diferente dos outros">Atendimento direto dos donos + estoque mostrado em tempo real no Instagram</textarea></div>
 </div>
 
 <div class="divider"></div>
@@ -394,7 +410,7 @@
   <div class="scale-row"><span class="scale-label">S&eacute;rio &harr; Divertido</span><div class="scale-track" data-scale="2"><div class="scale-fill" style="width:55%"></div></div><input class="scale-input" type="number" min="0" max="100" value="55" data-scale-input="2"></div>
   <div class="scale-row"><span class="scale-label">T&eacute;cnico &harr; Acess&iacute;vel</span><div class="scale-track" data-scale="3"><div class="scale-fill" style="width:90%"></div></div><input class="scale-input" type="number" min="0" max="100" value="90" data-scale-input="3"></div>
   <div class="scale-row"><span class="scale-label">Autorit&aacute;rio &harr; Amig&aacute;vel</span><div class="scale-track" data-scale="4"><div class="scale-fill" style="width:80%"></div></div><input class="scale-input" type="number" min="0" max="100" value="80" data-scale-input="4"></div>
-  <div class="field" style="margin-top:16px;"><div class="field-label">Persona da marca</div><input class="field-input" type="text" value="O parceiro da obra: fala simples, resolve r&aacute;pido e cumpre o que promete" placeholder="Mentor, amigo, autoridade, parceiro..."></div>
+  <div class="field" style="margin-top:16px;"><div class="field-label">Persona da marca</div><textarea class="field-textarea" style="min-height:0;" placeholder="Mentor, amigo, autoridade, parceiro...">O parceiro da obra: fala simples, resolve r&aacute;pido e cumpre o que promete</textarea></div>
 </div>
 
 <div class="divider"></div>
@@ -404,11 +420,11 @@
   <div class="section-tag">12 &mdash; Restri&ccedil;&otilde;es e Contexto</div>
   <h2>Limites e <em>prazos</em></h2>
   <div class="field-grid">
-    <div class="field"><div class="field-label">Prazo de lan&ccedil;amento</div><input class="field-input" type="text" value="Reestrutura&ccedil;&atilde;o do Instagram em novembro/2026; calend&aacute;rio de conte&uacute;do e tr&aacute;fego na sequ&ecirc;ncia" placeholder="Data ou 'sem prazo definido'"></div>
+    <div class="field"><div class="field-label">Prazo de lan&ccedil;amento</div><textarea class="field-textarea" style="min-height:0;" placeholder="Data ou 'sem prazo definido'">Reestrutura&ccedil;&atilde;o do Instagram em novembro/2026; calend&aacute;rio de conte&uacute;do e tr&aacute;fego na sequ&ecirc;ncia</textarea></div>
     <div class="field"><div class="field-label">Or&ccedil;amento</div><input class="field-input" type="text" value="A definir no kickoff com o cliente" placeholder="R$ ___ para tr&aacute;fego / produ&ccedil;&atilde;o"></div>
   </div>
   <div class="field"><div class="field-label">Canais priorit&aacute;rios</div><input class="field-input" type="text" value="Instagram (Reels + Stories) e WhatsApp" placeholder="Instagram, YouTube, email, WhatsApp..."></div>
-  <div class="field"><div class="field-label">Restri&ccedil;&otilde;es do nicho</div><input class="field-input" type="text" value="Sem regula&ccedil;&atilde;o espec&iacute;fica; cuidado com seguran&ccedil;a do trabalho nas imagens (EPI correto nos v&iacute;deos e fotos)" placeholder="Regula&ccedil;&atilde;o, compliance, limita&ccedil;&otilde;es..."></div>
+  <div class="field"><div class="field-label">Restri&ccedil;&otilde;es do nicho</div><textarea class="field-textarea" style="min-height:0;" placeholder="Regula&ccedil;&atilde;o, compliance, limita&ccedil;&otilde;es...">Sem regula&ccedil;&atilde;o espec&iacute;fica; cuidado com seguran&ccedil;a do trabalho nas imagens (EPI correto nos v&iacute;deos e fotos)</textarea></div>
 </div>
 
 <div class="divider"></div>
@@ -429,6 +445,12 @@
 </div>
 
 <script>
+  // Textareas sempre mostrando o texto completo
+  function ajustaAltura(t) { t.style.height = 'auto'; t.style.height = (t.scrollHeight + 2) + 'px'; }
+  window.addEventListener('load', () => {
+    document.querySelectorAll('textarea').forEach(t => { ajustaAltura(t); t.addEventListener('input', () => ajustaAltura(t)); });
+  });
+
   // Scale sliders
   document.querySelectorAll('.scale-track').forEach(track => {
     const id = track.dataset.scale;
@@ -467,7 +489,7 @@
       });
 
       section.querySelectorAll('.obj-table tbody tr').forEach(row => {
-        const cells = row.querySelectorAll('input');
+        const cells = row.querySelectorAll('input, textarea');
         if (cells.length > 0) {
           const num = row.querySelector('td:first-child');
           const vals = Array.from(cells).map(c => c.value || '').filter(v => v);
