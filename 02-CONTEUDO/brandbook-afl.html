@@ -3,503 +3,775 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Brandbook da AFL — logo, cores, tipografia, estilo visual e aplicações no Instagram, para padronizar toda a comunicação da marca.">
-<title>Brandbook &mdash; AFL | ADS Company</title>
+<meta name="description" content="Brandbook oficial da AFL — Avante Ferramentas Locadora: manifesto, logo, sistema de cores, tipografia, linguagem visual e aplicações da marca.">
+<title>Brandbook — AFL</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --amarelo: #FFC400;
-    --amarelo-escuro: #E0A800;
-    --grafite: #16161A;
-    --preto: #0A0A0C;
-    --cinza-card: #141418;
-    --cinza-medio: #2A2A2E;
-    --cinza-claro: #9A9A9A;
-    --cinza-border: rgba(255,255,255,0.07);
-    --branco: #F5F5F5;
-    --verde: #22C55E;
-    --vermelho: #EF4444;
-    --serif: 'Playfair Display', Georgia, serif;
-    --sans: 'Inter', -apple-system, sans-serif;
-    --marca: 'Montserrat', 'Inter', sans-serif;
-  }
-  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--preto);
-    color: var(--branco);
-    font-family: var(--sans);
-    font-size: 15px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+:root {
+  --base:    #0A0A0C;
+  --base2:   #111114;
+  --card:    #16161A;
+  --border:  rgba(255,255,255,0.07);
+  --amarelo: #FFC400;
+  --amarelo2:#E0A800;
+  --branco:  #FFFFFF;
+  --texto:   #B9BCC4;
+  --texto2:  #6E7076;
+  --verde:   #22C55E;
+  --vermelho:#EF4444;
+  --font:    'Montserrat', system-ui, sans-serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--base);
+  color: var(--branco);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
 
-  /* ===== TOP BAR ===== */
-  .top-bar {
-    background: rgba(10,10,12,0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--cinza-border);
-    padding: 14px 32px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .top-bar-name {
-    font-family: var(--serif);
-    font-size: 0.95rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.8);
-  }
-  .top-bar-name em { font-style: italic; color: var(--amarelo); }
-  .btn-voltar {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--amarelo);
-    text-decoration: none;
-    border: 1px solid rgba(255,196,0,0.3);
-    padding: 8px 18px;
-    border-radius: 20px;
-    transition: all 0.3s;
-  }
-  .btn-voltar:hover { background: var(--amarelo); color: #0A0A0C; }
+/* ─── TOP BAR ─── */
+.top-bar {
+  background: rgba(10,10,12,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 13px 32px;
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.top-bar-name { font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+.top-bar-name em { font-style: normal; color: var(--amarelo); }
+.btn-voltar {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--amarelo); text-decoration: none;
+  border: 1px solid rgba(255,196,0,0.3); padding: 8px 18px; border-radius: 20px;
+  transition: all 0.3s;
+}
+.btn-voltar:hover { background: var(--amarelo); color: #0A0A0C; }
 
-  /* ===== HERO ===== */
-  .hero {
-    padding: 90px 32px 64px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(180deg, #121014 0%, var(--preto) 100%);
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -220px; left: 50%;
-    transform: translateX(-50%);
-    width: 820px; height: 820px;
-    background: radial-gradient(circle, rgba(255,196,0,0.07) 0%, transparent 65%);
-    pointer-events: none;
-  }
-  .hero-tag {
-    display: inline-block;
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--amarelo);
-    margin-bottom: 20px;
-  }
-  .hero h1 {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 12px;
-  }
-  .hero h1 em { font-style: italic; color: var(--amarelo); }
-  .hero-line { width: 60px; height: 2px; background: var(--amarelo); margin: 22px auto; }
-  .hero p {
-    font-size: 0.95rem;
-    color: var(--cinza-claro);
-    font-weight: 300;
-    max-width: 640px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
+/* ─── UTILITIES ─── */
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.sec-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.45em;
+  text-transform: uppercase; color: var(--amarelo); margin-bottom: 14px;
+}
+.sec-title {
+  font-size: clamp(28px, 4vw, 48px); font-weight: 900;
+  letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 20px;
+}
+.sec-sub {
+  font-size: 16px; font-weight: 300; color: var(--texto);
+  max-width: 640px; line-height: 1.75;
+}
+section { padding: 96px 0; border-bottom: 1px solid var(--border); }
+section:last-of-type { border-bottom: none; }
 
-  /* ===== ESTRUTURA ===== */
-  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
-  .section { padding: 56px 0 24px; }
-  .section-header { text-align: center; margin-bottom: 40px; }
-  .section-tag {
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--amarelo);
-    margin-bottom: 12px;
-  }
-  .section-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; }
-  .section-title em { font-style: italic; color: var(--amarelo); }
-  .divider {
-    width: 100%; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,196,0,0.18), transparent);
-  }
-  .card {
-    background: var(--cinza-card);
-    border: 1px solid var(--cinza-border);
-    border-radius: 14px;
-    padding: 28px;
-  }
-  .card h4 {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--amarelo);
-    margin-bottom: 14px;
-  }
-  .card p { font-size: 0.88rem; color: #BBB; font-weight: 300; margin-bottom: 8px; }
-  .card strong { color: var(--branco); font-weight: 600; }
+/* ─── CAPA ─── */
+.capa {
+  min-height: calc(100vh - 54px);
+  display: flex; flex-direction: column;
+  background: linear-gradient(160deg, #0a0a0c 0%, #121014 55%, #171207 100%);
+  position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.capa::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 700px 420px at 82% 18%, rgba(255,196,0,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 520px 320px at 8% 85%, rgba(255,196,0,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+.capa-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,196,0,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,196,0,0.035) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+.capa-inner {
+  position: relative; z-index: 2; flex: 1;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 56px 72px;
+}
+.capa-header { display: flex; align-items: center; justify-content: space-between; }
+.capa-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.5em; text-transform: uppercase; color: rgba(255,196,0,0.75); }
+.capa-version { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; color: rgba(255,255,255,0.22); text-transform: uppercase; }
+.capa-main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 72px 0 40px; }
+.capa-logotype { display: flex; align-items: center; gap: 28px; margin-bottom: 56px; flex-wrap: wrap; }
+.capa-logo-img { width: 120px; height: 120px; border-radius: 16px; border: 1px solid var(--border); }
+.capa-brand-name {
+  font-size: clamp(80px, 14vw, 160px);
+  font-weight: 900; letter-spacing: -0.04em; line-height: 0.9;
+  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.72) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.capa-brand-sub {
+  display: block;
+  font-size: clamp(13px, 1.6vw, 18px); font-weight: 700;
+  letter-spacing: 0.42em; text-transform: uppercase;
+  color: var(--amarelo); margin-top: 14px;
+  -webkit-text-fill-color: var(--amarelo);
+}
+.capa-tagline {
+  font-size: clamp(19px, 3vw, 30px); font-weight: 300;
+  letter-spacing: 0.02em; color: rgba(255,255,255,0.55); margin-bottom: 52px;
+}
+.capa-tagline strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+.capa-big-idea {
+  display: inline-block;
+  font-size: clamp(14px, 1.8vw, 18px); font-weight: 800;
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--amarelo);
+  border-top: 2px solid var(--amarelo); padding-top: 16px; max-width: 560px;
+}
+.capa-footer {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  padding-top: 44px; border-top: 1px solid rgba(255,255,255,0.06);
+}
+.capa-footer-left { font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.22); line-height: 1.8; }
+.capa-footer-right { font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.16); }
+.capa-accent-line {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 4px;
+  background: linear-gradient(to bottom, var(--amarelo), var(--amarelo2), transparent);
+  opacity: 0.8;
+}
 
-  /* ===== ESSENCIA ===== */
-  .essencia-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
-  @media (max-width: 760px) { .essencia-grid { grid-template-columns: 1fr; } }
-  .essencia-grid .card p { flex: 1; }
+/* ─── MANIFESTO ─── */
+.manifesto { background: var(--base2); }
+.manifesto-quote {
+  font-size: clamp(28px, 4vw, 52px); font-weight: 800;
+  letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 48px; max-width: 900px;
+}
+.manifesto-quote em { font-style: italic; color: var(--amarelo); }
+.manifesto-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; }
+.manifesto-col h3 { font-size: 13px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amarelo); margin-bottom: 16px; }
+.manifesto-col p { font-size: 15px; font-weight: 300; color: var(--texto); line-height: 1.8; }
+.manifesto-col p strong { color: var(--branco); font-weight: 600; }
+.manifesto-values { display: flex; gap: 48px; margin-top: 64px; flex-wrap: wrap; }
+.manifesto-value { flex: 1; min-width: 200px; }
+.manifesto-value-num {
+  font-size: 48px; font-weight: 900; letter-spacing: -0.04em; line-height: 1;
+  background: linear-gradient(135deg, var(--amarelo), #ffe08a);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 8px;
+}
+.manifesto-value-label { font-size: 12px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+.manifesto-value-desc { font-size: 14px; font-weight: 300; color: var(--texto); margin-top: 8px; }
 
-  /* ===== LOGO ===== */
-  .logo-grid { display: grid; grid-template-columns: 220px 1fr; gap: 20px; align-items: start; }
-  @media (max-width: 760px) { .logo-grid { grid-template-columns: 1fr; } }
-  .logo-amostra {
-    background: var(--cinza-card);
-    border: 1px solid var(--cinza-border);
-    border-radius: 14px;
-    padding: 28px;
-    text-align: center;
-  }
-  .logo-amostra img { width: 130px; height: 130px; border-radius: 50%; }
-  .logo-amostra p { font-size: 0.72rem; color: var(--cinza-claro); margin-top: 12px; font-weight: 300; }
-  .regras-logo { list-style: none; }
-  .regras-logo li {
-    font-size: 0.86rem;
-    color: #BBB;
-    font-weight: 300;
-    padding: 9px 0 9px 26px;
-    position: relative;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
-  .regras-logo li:last-child { border-bottom: none; }
-  .regras-logo li::before { content: '\2713'; position: absolute; left: 0; color: var(--amarelo); font-weight: 700; }
-  .regras-logo strong { color: var(--branco); }
+/* ─── LOGO ─── */
+.logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; }
+.logo-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+.logo-card-header { padding: 22px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.logo-card-num { font-size: 10px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: var(--texto2); }
+.logo-card-status { font-size: 9px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; background: rgba(255,196,0,0.15); color: var(--amarelo); }
+.logo-preview { background: #050507; padding: 40px 28px; display: flex; align-items: center; justify-content: center; min-height: 240px; }
+.logo-preview img { width: 200px; height: 200px; }
+.logo-preview .avatar { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--amarelo); }
+.logo-card-desc { padding: 20px 28px 24px; font-size: 13px; font-weight: 300; color: var(--texto); line-height: 1.7; }
+.logo-card-desc strong { color: var(--branco); font-weight: 600; }
+.logo-regras { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.logo-regra-col { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+.logo-regra-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 18px; }
+.logo-regra-col.ok h4 { color: var(--verde); }
+.logo-regra-col.no h4 { color: var(--vermelho); }
+.logo-regra-col ul { list-style: none; }
+.logo-regra-col li { font-size: 13.5px; font-weight: 300; color: var(--texto); padding: 8px 0 8px 24px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.logo-regra-col li:last-child { border-bottom: none; }
+.logo-regra-col.ok li::before { content: '✓'; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
+.logo-regra-col.no li::before { content: '✕'; position: absolute; left: 0; color: var(--vermelho); font-weight: 700; }
 
-  /* ===== CORES ===== */
-  .cores-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
-  @media (max-width: 860px) { .cores-grid { grid-template-columns: repeat(2, 1fr); } }
-  .cor {
-    border-radius: 14px;
-    border: 1px solid var(--cinza-border);
-    overflow: hidden;
-    background: var(--cinza-card);
-  }
-  .cor-bloco { height: 96px; }
-  .cor-info { padding: 14px 16px; }
-  .cor-nome { font-size: 0.78rem; font-weight: 600; color: var(--branco); }
-  .cor-hex { font-size: 0.72rem; color: var(--cinza-claro); font-weight: 300; }
-  .cor-uso { font-size: 0.68rem; color: var(--cinza-claro); font-weight: 300; margin-top: 6px; line-height: 1.5; }
+/* ─── CORES ─── */
+.cores-primary { display: flex; border-radius: 16px; overflow: hidden; margin: 56px 0 32px; min-height: 160px; border: 1px solid var(--border); }
+.cor-block { flex: 1; padding: 20px; display: flex; align-items: flex-end; }
+.cor-block-label { font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.85); }
+.cor-block-hex { font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.45); margin-top: 2px; }
+.cores-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.cor-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.cor-sample { height: 110px; }
+.cor-info { padding: 18px 20px; }
+.cor-name { font-size: 15px; font-weight: 700; }
+.cor-hex { font-size: 12px; font-weight: 500; color: var(--amarelo); margin-top: 2px; }
+.cor-rgb { font-size: 11px; font-weight: 400; color: var(--texto2); margin-top: 2px; }
+.cor-uso { font-size: 11.5px; font-weight: 400; color: var(--texto); margin-top: 10px; line-height: 1.5; }
+.neutros-grid { display: flex; gap: 16px; flex-wrap: wrap; }
+.neutro-item { flex: 1; min-width: 150px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.neutro-sample { height: 64px; }
+.neutro-info { padding: 12px 16px; }
+.neutro-name { font-size: 12.5px; font-weight: 600; }
+.neutro-hex { font-size: 11px; color: var(--texto2); }
+.cores-regras { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+.cor-regra { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+.cor-regra h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 18px; }
+.cor-regra-ok h4 { color: var(--verde); }
+.cor-regra-no h4 { color: var(--vermelho); }
+.cor-regra ul { list-style: none; }
+.cor-regra li { font-size: 13.5px; font-weight: 300; color: var(--texto); padding: 8px 0 8px 24px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.cor-regra li:last-child { border-bottom: none; }
+.cor-regra-ok li::before { content: '✓'; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
+.cor-regra-no li::before { content: '✕'; position: absolute; left: 0; color: var(--vermelho); font-weight: 700; }
 
-  /* ===== TIPOGRAFIA ===== */
-  .tipo-card { font-family: var(--marca); }
-  .tipo-amostra { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 18px 0; }
-  .tipo-amostra:last-child { border-bottom: none; }
-  .tipo-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cinza-claro); margin-bottom: 8px; }
-  .tipo-800 { font-weight: 800; font-size: 1.6rem; text-transform: uppercase; letter-spacing: 0.02em; }
-  .tipo-800 span { color: var(--amarelo); }
-  .tipo-600 { font-weight: 600; font-size: 1.1rem; }
-  .tipo-400 { font-weight: 400; font-size: 0.95rem; color: #CCC; }
+/* ─── TIPOGRAFIA ─── */
+.tipo-hero {
+  font-size: clamp(140px, 22vw, 260px); font-weight: 900; line-height: 0.9;
+  letter-spacing: -0.05em; margin: 40px 0 8px;
+  background: linear-gradient(135deg, var(--amarelo) 0%, #ffe08a 60%, #fff 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.tipo-hero-sub { font-size: 13px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--texto2); margin-bottom: 48px; }
+.tipo-escala { border-top: 1px solid var(--border); }
+.tipo-row { display: grid; grid-template-columns: 240px 1fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--border); align-items: center; }
+.tipo-row-name { font-size: 14px; font-weight: 700; }
+.tipo-row-spec { font-size: 11.5px; font-weight: 500; color: var(--amarelo); margin-top: 3px; }
+.tipo-row-uso { font-size: 11.5px; font-weight: 300; color: var(--texto2); margin-top: 3px; }
+.tipo-pesos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.tipo-peso-item { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; }
+.tipo-peso-label { font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amarelo); margin-bottom: 10px; }
+.tipo-peso-demo { font-size: 30px; letter-spacing: -0.02em; line-height: 1.1; }
+.tipo-peso-num { font-size: 11.5px; font-weight: 300; color: var(--texto2); margin-top: 8px; }
 
-  /* ===== ICONOGRAFIA 3D ===== */
-  .icones-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; }
-  .icone-3d { width: 86px; text-align: center; }
-  .icone-3d img { width: 78px; height: 78px; border-radius: 50%; border: 2px solid var(--amarelo); display: block; margin: 0 auto 6px; }
-  .icone-3d span { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #CCC; }
+/* ─── LINGUAGEM VISUAL ─── */
+.icones-row { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; margin: 48px 0 24px; }
+.icone-3d { width: 104px; text-align: center; }
+.icone-3d img { width: 92px; height: 92px; border-radius: 50%; border: 2px solid var(--amarelo); display: block; margin: 0 auto 8px; }
+.icone-3d span { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--texto); }
+.receita {
+  background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--amarelo);
+  border-radius: 0 14px 14px 0; padding: 26px 30px; margin-top: 16px;
+}
+.receita h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amarelo); margin-bottom: 12px; }
+.receita p { font-size: 14px; font-weight: 300; color: var(--texto); line-height: 1.8; }
+.receita strong { color: var(--branco); font-weight: 600; }
+.elem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.elem-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.elem-preview { background: #0D0D10; min-height: 130px; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.elem-info { padding: 18px 22px 22px; }
+.elem-name { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.elem-desc { font-size: 12.5px; font-weight: 300; color: var(--texto); line-height: 1.6; }
+.demo-faixa { background: rgba(10,10,12,0.9); border-left: 4px solid var(--amarelo); padding: 12px 18px; border-radius: 4px; }
+.demo-faixa-nome { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+.demo-faixa-preco { font-size: 12px; font-weight: 600; color: var(--amarelo); }
+.demo-selo { background: var(--amarelo); color: #0A0A0C; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; padding: 10px 20px; border-radius: 30px; }
+.demo-carimbo { width: 74px; height: 74px; border-radius: 50%; border: 1px solid var(--border); }
 
-  /* ===== APLICACOES ===== */
-  .aplic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  @media (max-width: 760px) { .aplic-grid { grid-template-columns: 1fr; } }
-  .bio-mock {
-    background: #0D0D0F;
-    border: 1px solid var(--cinza-medio);
-    border-radius: 12px;
-    padding: 20px;
-    font-size: 0.85rem;
-    line-height: 1.75;
-    color: #CCC;
-  }
-  .bio-mock .nome-perfil { font-weight: 700; color: var(--branco); font-size: 0.92rem; }
-  .bio-mock .user { color: var(--cinza-claro); font-size: 0.78rem; margin-bottom: 10px; }
-  .bio-mock .link { color: #7CB8FF; }
-  .mockup-wrap { text-align: center; }
-  .mockup-wrap img { width: 100%; max-width: 300px; border-radius: 12px; border: 1px solid var(--cinza-medio); }
-  .mockup-wrap p { font-size: 0.75rem; color: var(--cinza-claro); margin-top: 10px; font-weight: 300; }
-  .mockup-wrap a { color: #7CB8FF; }
+/* ─── APLICACOES ─── */
+.aplic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; align-items: start; }
+.aplic-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+.aplic-card h4 { font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amarelo); margin-bottom: 18px; }
+.bio-mock { background: #0D0D10; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 22px; font-size: 14px; line-height: 1.8; color: #CCC; }
+.bio-mock .nome-perfil { font-weight: 800; color: var(--branco); font-size: 15px; }
+.bio-mock .user { color: var(--texto2); font-size: 12.5px; margin-bottom: 10px; }
+.bio-mock .link { color: #7CB8FF; }
+.aplic-card p { font-size: 13px; font-weight: 300; color: var(--texto); line-height: 1.7; margin-top: 16px; }
+.aplic-card a { color: var(--amarelo); }
+.mockup-img { width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: block; }
 
-  /* ===== CERTO E ERRADO ===== */
-  .ce-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  @media (max-width: 760px) { .ce-grid { grid-template-columns: 1fr; } }
-  .ce-col { background: var(--cinza-card); border: 1px solid var(--cinza-border); border-radius: 14px; padding: 28px; }
-  .ce-col.certo { border-top: 3px solid var(--verde); }
-  .ce-col.errado { border-top: 3px solid var(--vermelho); }
-  .ce-col h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; margin-bottom: 18px; }
-  .ce-col ul { list-style: none; }
-  .ce-col li {
-    font-size: 0.86rem;
-    color: #BBB;
-    font-weight: 300;
-    padding: 9px 0 9px 26px;
-    position: relative;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
-  .ce-col li:last-child { border-bottom: none; }
-  .certo li::before { content: '\2713'; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
-  .errado li::before { content: '\2715'; position: absolute; left: 0; color: var(--vermelho); font-weight: 700; }
+/* ─── TOM DE VOZ ─── */
+.voz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; }
+.voz-col { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+.voz-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 20px; }
+.voz-col.fala h4 { color: var(--verde); }
+.voz-col.nao-fala h4 { color: var(--vermelho); }
+.voz-frase { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.voz-frase:last-child { border-bottom: none; }
+.voz-frase .f { font-size: 15px; font-weight: 600; line-height: 1.5; }
+.voz-col.fala .f::before { content: '“'; color: var(--verde); }
+.voz-col.fala .f::after { content: '”'; color: var(--verde); }
+.voz-col.nao-fala .f { color: rgba(255,255,255,0.55); text-decoration: line-through; text-decoration-color: rgba(239,68,68,0.6); }
+.voz-frase .pq { font-size: 12px; font-weight: 300; color: var(--texto2); margin-top: 4px; }
 
-  /* ===== FOOTER ===== */
-  .footer {
-    text-align: center;
-    padding: 48px 32px 32px;
-    border-top: 1px solid var(--cinza-border);
-    margin-top: 56px;
-  }
-  .footer-brand { font-family: var(--serif); font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
-  .footer-brand em { font-style: italic; color: var(--amarelo); }
-  .footer-sub { font-size: 0.72rem; color: rgba(255,255,255,0.3); font-weight: 300; }
+/* ─── FOOTER ─── */
+.bb-footer { text-align: center; padding: 56px 32px 40px; }
+.bb-footer-brand { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+.bb-footer-brand em { font-style: normal; color: var(--amarelo); }
+.bb-footer-sub { font-size: 11px; color: rgba(255,255,255,0.25); font-weight: 300; }
 
-  @media (max-width: 600px) {
-    .top-bar { padding: 12px 16px; }
-    .top-bar-name { display: none; }
-    .hero { padding: 56px 20px 40px; }
-    .container { padding: 0 16px; }
-    .section { padding: 40px 0 20px; }
-  }
+/* ─── RESPONSIVO ─── */
+@media (max-width: 860px) {
+  .wrap { padding: 0 20px; }
+  section { padding: 64px 0; }
+  .capa-inner { padding: 40px 24px; }
+  .capa-logo-img { width: 88px; height: 88px; }
+  .manifesto-cols, .logo-grid, .logo-regras, .cores-regras, .aplic-grid, .voz-grid { grid-template-columns: 1fr; gap: 20px; }
+  .cores-grid { grid-template-columns: 1fr 1fr; }
+  .tipo-pesos { grid-template-columns: 1fr 1fr; }
+  .elem-grid { grid-template-columns: 1fr; }
+  .tipo-row { grid-template-columns: 1fr; gap: 10px; }
+  .cores-primary { flex-direction: column; }
+  .cor-block { min-height: 84px; }
+}
+@media (max-width: 480px) {
+  .cores-grid, .tipo-pesos { grid-template-columns: 1fr; }
+  .top-bar { padding: 12px 16px; }
+}
 </style>
 </head>
 <body>
 
 <!-- TOP BAR -->
 <div class="top-bar">
-  <span class="top-bar-name">ADS <em>Company</em></span>
-  <a href="../index.html" class="btn-voltar">&larr; Voltar &agrave; Central</a>
+  <span class="top-bar-name">ADS <em>COMPANY</em></span>
+  <a href="../index.html" class="btn-voltar">&larr; Voltar à Central</a>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-tag">Identidade da Marca</div>
-  <h1>Brandbook <em>AFL</em></h1>
-  <div class="hero-line"></div>
-  <p>O guia da marca AFL &mdash; Avante Ferramentas Locadora. Tudo que for criado daqui para a frente (posts, Stories, capas, an&uacute;ncios, artes de pre&ccedil;o) segue o que est&aacute; neste documento, para a marca ter uma cara s&oacute; em qualquer lugar.</p>
-</div>
-
-<div class="divider"></div>
-
-<div class="container">
-
-  <!-- ESSENCIA -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-tag">01 &middot; Ess&ecirc;ncia</div>
-      <div class="section-title">O que a marca <em>&eacute;</em></div>
+<!-- ══════════════════ CAPA ══════════════════ -->
+<div class="capa">
+  <div class="capa-grid"></div>
+  <div class="capa-accent-line"></div>
+  <div class="capa-inner">
+    <div class="capa-header">
+      <span class="capa-eyebrow">Brandbook Oficial</span>
+      <span class="capa-version">v1.0 · Novembro 2026</span>
     </div>
-    <div class="essencia-grid">
-      <div class="card">
-        <h4>Promessa</h4>
-        <p>O equipamento certo na sua obra, no dia em que voc&ecirc; precisa, por um pre&ccedil;o que cabe no or&ccedil;amento da obra.</p>
+    <div class="capa-main">
+      <div class="capa-logotype">
+        <img class="capa-logo-img" src="logo-afl.png" alt="Logo AFL" width="120" height="120">
+        <div>
+          <div class="capa-brand-name">AFL<span class="capa-brand-sub">Avante Ferramentas Locadora</span></div>
+        </div>
       </div>
-      <div class="card">
-        <h4>Personalidade</h4>
-        <p>O parceiro da obra: fala simples, resolve r&aacute;pido e cumpre o que promete. Sem jarg&atilde;o, sem enrola&ccedil;&atilde;o.</p>
+      <div class="capa-tagline">Locação de equipamentos para construção civil em <strong>Barreiras-BA</strong></div>
+      <div class="capa-big-idea">Sua obra não pode parar. A AFL também não.</div>
+    </div>
+    <div class="capa-footer">
+      <div class="capa-footer-left">Guia oficial da marca<br>Identidade · Cores · Tipografia · Aplicações</div>
+      <div class="capa-footer-right">ADS Company</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ 01 MANIFESTO ══════════════════ -->
+<section class="manifesto">
+  <div class="wrap">
+    <p class="sec-label">01 — Manifesto</p>
+    <div class="manifesto-quote">Quem toca obra não tem tempo a perder. A AFL existe para a obra <em>nunca parar</em>.</div>
+    <div class="manifesto-cols">
+      <div class="manifesto-col">
+        <h3>Propósito</h3>
+        <p>Colocar <strong>o equipamento certo na obra certa, no dia certo</strong> — sem o cliente precisar imobilizar dinheiro comprando betoneira, andaime ou compactador que vai usar por poucos dias. A AFL transforma equipamento caro em diária acessível.</p>
       </div>
-      <div class="card">
-        <h4>Tom de voz</h4>
-        <p>Casual e direto, sempre acess&iacute;vel. Fala de resultado (&ldquo;obra andando&rdquo;), nunca de especifica&ccedil;&atilde;o t&eacute;cnica. Todo texto termina com um convite para o WhatsApp.</p>
+      <div class="manifesto-col">
+        <h3>Posicionamento</h3>
+        <p>A locadora <strong>mais rápida e mais fácil de contratar</strong> de Barreiras: estoque visível no Instagram, orçamento na hora pelo WhatsApp e entrega direto na obra. Atendimento dos próprios donos, olho no olho.</p>
+      </div>
+    </div>
+    <div class="manifesto-values">
+      <div class="manifesto-value">
+        <div class="manifesto-value-num">01</div>
+        <div class="manifesto-value-label">Rapidez</div>
+        <div class="manifesto-value-desc">Resposta imediata no WhatsApp e entrega rápida na obra. Obra parada é prejuízo todo dia.</div>
+      </div>
+      <div class="manifesto-value">
+        <div class="manifesto-value-num">02</div>
+        <div class="manifesto-value-label">Preço justo</div>
+        <div class="manifesto-value-desc">Preço na cara, sem pegadinha: diária, semana ou mês. O cliente paga só pelo tempo que usa.</div>
+      </div>
+      <div class="manifesto-value">
+        <div class="manifesto-value-num">03</div>
+        <div class="manifesto-value-label">Confiança</div>
+        <div class="manifesto-value-desc">Equipamento revisado, troca garantida e dono com rosto e endereço. Loja de verdade, gente de verdade.</div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- LOGO -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-tag">02 &middot; Logo</div>
-      <div class="section-title">Como usar a <em>marca</em></div>
-    </div>
+<!-- ══════════════════ 02 LOGO ══════════════════ -->
+<section>
+  <div class="wrap">
+    <p class="sec-label">02 — Logo</p>
+    <h2 class="sec-title">A assinatura<br>da marca</h2>
+    <p class="sec-sub">Prédios brancos sobre fundo preto com a sigla AFL em serifa clássica. A logo representa a construção civil que a AFL ajuda a levantar todos os dias.</p>
+
     <div class="logo-grid">
-      <div class="logo-amostra">
-        <img src="logo-afl-amostra.png" alt="Logo AFL: pr&eacute;dios brancos sobre fundo preto" width="130" height="130" loading="lazy">
-        <p>Pr&eacute;dios brancos + sigla AFL sobre fundo preto</p>
+      <div class="logo-card">
+        <div class="logo-card-header">
+          <span class="logo-card-num">Versão Principal</span>
+          <span class="logo-card-status">Oficial</span>
+        </div>
+        <div class="logo-preview">
+          <img src="logo-afl.png" alt="Logo AFL — versão principal sobre fundo preto" width="200" height="200" loading="lazy">
+        </div>
+        <div class="logo-card-desc"><strong>Branco sobre preto, sempre.</strong> É a única versão em uso até o cliente entregar o arquivo-fonte em alta resolução (PNG com fundo transparente), que deve ser solicitado e guardado na pasta da marca.</div>
       </div>
-      <div class="card">
-        <h4>Regras de uso</h4>
-        <ul class="regras-logo">
-          <li><strong>Vers&atilde;o oficial:</strong> pr&eacute;dios brancos com a sigla AFL, sempre sobre fundo escuro (preto ou grafite).</li>
-          <li><strong>Assinatura, n&atilde;o publica&ccedil;&atilde;o:</strong> a logo aparece como carimbo em todas as artes (sempre no mesmo canto), mas nunca mais como post sozinha.</li>
-          <li><strong>Respiro:</strong> manter espa&ccedil;o livre ao redor da logo de pelo menos metade da altura dela.</li>
-          <li><strong>N&atilde;o fazer:</strong> esticar, inclinar, trocar a cor, aplicar sombra colorida ou colocar sobre foto polu&iacute;da sem faixa escura por tr&aacute;s.</li>
-          <li><strong>Arquivo-fonte:</strong> solicitar ao cliente o arquivo original em alta resolu&ccedil;&atilde;o (PNG com fundo transparente) para a pasta da marca.</li>
+      <div class="logo-card">
+        <div class="logo-card-header">
+          <span class="logo-card-num">Aplicação em Avatar</span>
+          <span class="logo-card-status">Perfil</span>
+        </div>
+        <div class="logo-preview">
+          <img class="avatar" src="logo-afl.png" alt="Logo AFL aplicada em avatar circular" width="120" height="120" loading="lazy">
+        </div>
+        <div class="logo-card-desc"><strong>Foto de perfil do Instagram e do WhatsApp.</strong> A logo centralizada no círculo, com folga nas bordas para nada ser cortado. O anel amarelo aparece naturalmente quando há Stories ativos.</div>
+      </div>
+    </div>
+
+    <div class="logo-regras">
+      <div class="logo-regra-col ok">
+        <h4>Sempre</h4>
+        <ul>
+          <li>Logo sobre fundo preto ou grafite da paleta</li>
+          <li>Carimbo em todas as artes, sempre no mesmo canto</li>
+          <li>Respiro mínimo: metade da altura da logo em volta dela</li>
+          <li>Sobre foto: aplicar faixa ou sombra escura por trás</li>
+        </ul>
+      </div>
+      <div class="logo-regra-col no">
+        <h4>Nunca</h4>
+        <ul>
+          <li>Esticar, inclinar ou distorcer</li>
+          <li>Trocar a cor dos prédios ou da sigla</li>
+          <li>Publicar a logo como post sozinha no feed</li>
+          <li>Aplicar sobre fundo claro ou foto poluída sem proteção</li>
         </ul>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- CORES -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-tag">03 &middot; Cores</div>
-      <div class="section-title">A paleta <em>oficial</em></div>
+<!-- ══════════════════ 03 CORES ══════════════════ -->
+<section style="background:var(--base2)">
+  <div class="wrap">
+    <p class="sec-label">03 — Sistema de Cores</p>
+    <h2 class="sec-title">Amarelo máquina,<br>preto obra</h2>
+    <p class="sec-sub">A paleta nasce dos próprios equipamentos: o amarelo de betoneira, andaime e compactador sobre o fundo escuro que valoriza o produto. É a cor da obra em movimento.</p>
+
+    <div class="cores-primary">
+      <div class="cor-block" style="background:#0A0A0C;flex:1.5">
+        <div><div class="cor-block-label">Base</div><div class="cor-block-hex">#0A0A0C</div></div>
+      </div>
+      <div class="cor-block" style="background:#16161A">
+        <div><div class="cor-block-label">Grafite</div><div class="cor-block-hex">#16161A</div></div>
+      </div>
+      <div class="cor-block" style="background:#FFC400">
+        <div><div class="cor-block-label" style="color:#0A0A0C">Primária</div><div class="cor-block-hex" style="color:rgba(0,0,0,0.5)">#FFC400</div></div>
+      </div>
+      <div class="cor-block" style="background:#E0A800">
+        <div><div class="cor-block-label" style="color:#0A0A0C">Sombra</div><div class="cor-block-hex" style="color:rgba(0,0,0,0.5)">#E0A800</div></div>
+      </div>
     </div>
+
     <div class="cores-grid">
-      <div class="cor">
-        <div class="cor-bloco" style="background:#FFC400;"></div>
+      <div class="cor-card">
+        <div class="cor-sample" style="background:linear-gradient(145deg,#ffd23e,#FFC400)"></div>
         <div class="cor-info">
-          <div class="cor-nome">Amarelo AFL</div>
+          <div class="cor-name">Amarelo AFL</div>
           <div class="cor-hex">#FFC400</div>
-          <div class="cor-uso">Cor de a&ccedil;&atilde;o: equipamentos, bot&otilde;es, pre&ccedil;os e destaques. ~20% da arte.</div>
+          <div class="cor-rgb">RGB 255 · 196 · 0</div>
+          <div class="cor-uso">Cor primária: equipamentos, preços, botões e destaques. Até 25% de cada arte.</div>
         </div>
       </div>
-      <div class="cor">
-        <div class="cor-bloco" style="background:#E0A800;"></div>
+      <div class="cor-card">
+        <div class="cor-sample" style="background:linear-gradient(145deg,#f0b800,#E0A800)"></div>
         <div class="cor-info">
-          <div class="cor-nome">Amarelo Escuro</div>
+          <div class="cor-name">Amarelo Sombra</div>
           <div class="cor-hex">#E0A800</div>
-          <div class="cor-uso">Sombras e volumes do amarelo nos elementos 3D.</div>
+          <div class="cor-rgb">RGB 224 · 168 · 0</div>
+          <div class="cor-uso">Volumes e sombras do amarelo nos elementos 3D e degradês.</div>
         </div>
       </div>
-      <div class="cor">
-        <div class="cor-bloco" style="background:#16161A;"></div>
+      <div class="cor-card">
+        <div class="cor-sample" style="background:linear-gradient(145deg,#1c1c22,#16161A)"></div>
         <div class="cor-info">
-          <div class="cor-nome">Grafite</div>
+          <div class="cor-name">Grafite</div>
           <div class="cor-hex">#16161A</div>
-          <div class="cor-uso">Fundo padr&atilde;o das artes e capas. ~60% da arte.</div>
+          <div class="cor-rgb">RGB 22 · 22 · 26</div>
+          <div class="cor-uso">Fundo padrão de artes, capas de destaque e cards.</div>
         </div>
       </div>
-      <div class="cor">
-        <div class="cor-bloco" style="background:#0A0A0C;"></div>
+      <div class="cor-card">
+        <div class="cor-sample" style="background:linear-gradient(145deg,#121216,#0A0A0C)"></div>
         <div class="cor-info">
-          <div class="cor-nome">Preto Profundo</div>
+          <div class="cor-name">Preto Profundo</div>
           <div class="cor-hex">#0A0A0C</div>
-          <div class="cor-uso">Degrad&ecirc; com o grafite e texto sobre amarelo.</div>
-        </div>
-      </div>
-      <div class="cor">
-        <div class="cor-bloco" style="background:#F5F5F5;"></div>
-        <div class="cor-info">
-          <div class="cor-nome">Branco Gelo</div>
-          <div class="cor-hex">#F5F5F5</div>
-          <div class="cor-uso">Textos sobre fundo escuro e logo.</div>
+          <div class="cor-rgb">RGB 10 · 10 · 12</div>
+          <div class="cor-uso">Base de degradês, texto sobre amarelo e fundo da logo.</div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- TIPOGRAFIA -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-tag">04 &middot; Tipografia</div>
-      <div class="section-title">Como a marca <em>escreve</em></div>
+    <div style="margin-top:48px">
+      <h3 style="font-size:14px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--texto2);margin-bottom:20px">Apoio e Neutros</h3>
+      <div class="neutros-grid">
+        <div class="neutro-item">
+          <div class="neutro-sample" style="background:#FFFFFF"></div>
+          <div class="neutro-info"><div class="neutro-name">Branco Puro</div><div class="neutro-hex">#FFFFFF</div></div>
+        </div>
+        <div class="neutro-item">
+          <div class="neutro-sample" style="background:#B9BCC4"></div>
+          <div class="neutro-info"><div class="neutro-name">Cinza Texto</div><div class="neutro-hex">#B9BCC4</div></div>
+        </div>
+        <div class="neutro-item">
+          <div class="neutro-sample" style="background:#6E7076"></div>
+          <div class="neutro-info"><div class="neutro-name">Cinza Apoio</div><div class="neutro-hex">#6E7076</div></div>
+        </div>
+        <div class="neutro-item">
+          <div class="neutro-sample" style="background:#22C55E"></div>
+          <div class="neutro-info"><div class="neutro-name">Verde Confirmação</div><div class="neutro-hex">#22C55E</div></div>
+        </div>
+      </div>
     </div>
-    <div class="card tipo-card">
-      <h4 style="font-family:var(--sans);">Montserrat &mdash; fonte &uacute;nica da marca (gratuita no Google Fonts e no Canva)</h4>
-      <div class="tipo-amostra">
-        <div class="tipo-label">Extrabold 800 &middot; t&iacute;tulos e pre&ccedil;os, em caixa alta</div>
-        <div class="tipo-800">Betoneira <span>R$ 100</span>/di&aacute;ria</div>
+
+    <div class="cores-regras">
+      <div class="cor-regra cor-regra-ok">
+        <h4>Uso Correto</h4>
+        <ul>
+          <li>Texto branco sobre preto ou grafite</li>
+          <li>Texto preto (#0A0A0C) sobre amarelo — nunca branco sobre amarelo</li>
+          <li>Amarelo como cor de ação: preço, botão, seta, destaque</li>
+          <li>Verde (#22C55E) só para confirmações e marcas de visto</li>
+          <li>Degradê permitido: grafite para preto, amarelo para amarelo sombra</li>
+        </ul>
       </div>
-      <div class="tipo-amostra">
-        <div class="tipo-label">Semibold 600 &middot; subt&iacute;tulos e nomes de equipamento</div>
-        <div class="tipo-600">Entrega r&aacute;pida na sua obra</div>
-      </div>
-      <div class="tipo-amostra">
-        <div class="tipo-label">Regular 400 &middot; textos de apoio e legendas</div>
-        <div class="tipo-400">Alugue por di&aacute;ria, semana ou m&ecirc;s. Pe&ccedil;a seu or&ccedil;amento pelo WhatsApp.</div>
+      <div class="cor-regra cor-regra-no">
+        <h4>Evitar Sempre</h4>
+        <ul>
+          <li>Amarelo como fundo de arte inteira (vira panfleto)</li>
+          <li>Branco sobre amarelo — contraste ruim, reprovado</li>
+          <li>Laranja, vermelho ou azul como cor de marca em artes</li>
+          <li>Amarelo diferente do oficial (#FFC400) em qualquer peça</li>
+          <li>Mais de duas cores da paleta no mesmo degradê</li>
+        </ul>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ICONOGRAFIA 3D -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-tag">05 &middot; Estilo Visual</div>
-      <div class="section-title">Iconografia <em>3D</em></div>
-    </div>
-    <div class="card">
-      <h4>O sistema de &iacute;cones da AFL</h4>
-      <div class="icones-row">
-        <div class="icone-3d"><img src="capas-destaques/capa-disponiveis-thumb.jpg" alt="&Iacute;cone 3D caixa de ferramentas" width="78" height="78" loading="lazy"><span>Ferramentas</span></div>
-        <div class="icone-3d"><img src="capas-destaques/capa-betoneiras-thumb.jpg" alt="&Iacute;cone 3D betoneira" width="78" height="78" loading="lazy"><span>Betoneira</span></div>
-        <div class="icone-3d"><img src="capas-destaques/capa-andaimes-thumb.jpg" alt="&Iacute;cone 3D andaime" width="78" height="78" loading="lazy"><span>Andaime</span></div>
-        <div class="icone-3d"><img src="capas-destaques/capa-balancins-thumb.jpg" alt="&Iacute;cone 3D balancim" width="78" height="78" loading="lazy"><span>Balancim</span></div>
-        <div class="icone-3d"><img src="capas-destaques/capa-precos-thumb.jpg" alt="&Iacute;cone 3D etiqueta de pre&ccedil;o" width="78" height="78" loading="lazy"><span>Pre&ccedil;o</span></div>
-        <div class="icone-3d"><img src="capas-destaques/capa-como-alugar-thumb.jpg" alt="&Iacute;cone 3D prancheta" width="78" height="78" loading="lazy"><span>Checklist</span></div>
-        <div class="icone-3d"><img src="capas-destaques/capa-nossa-loja-thumb.jpg" alt="&Iacute;cone 3D loja com pino de mapa" width="78" height="78" loading="lazy"><span>Loja</span></div>
+<!-- ══════════════════ 04 TIPOGRAFIA ══════════════════ -->
+<section>
+  <div class="wrap">
+    <p class="sec-label">04 — Tipografia</p>
+    <h2 class="sec-title">Montserrat</h2>
+    <p class="sec-sub">Uma única família tipográfica, geométrica e forte como estrutura de obra, com todos os pesos necessários para a hierarquia completa. Gratuita no Google Fonts e disponível no Canva.</p>
+
+    <div class="tipo-hero">Aa</div>
+    <div class="tipo-hero-sub">Montserrat · Thin 100 ao Black 900</div>
+
+    <div class="tipo-escala">
+      <div class="tipo-row">
+        <div class="tipo-row-meta">
+          <div class="tipo-row-name">Display / Hero</div>
+          <div class="tipo-row-spec">64–120px · Black 900 · caixa alta</div>
+          <div class="tipo-row-uso">Chamadas principais de arte</div>
+        </div>
+        <div style="font-size:clamp(30px,5vw,52px);font-weight:900;letter-spacing:-0.03em;line-height:1;text-transform:uppercase">Sua obra<br>não para.</div>
       </div>
-      <p><strong>Receita do estilo:</strong> objeto em 3D realista-estilizado, amarelo AFL com detalhes em preto e cinza, centralizado sobre fundo grafite em degrad&ecirc; com brilho suave atr&aacute;s, ilumina&ccedil;&atilde;o de est&uacute;dio vinda de cima e sombra suave embaixo. <strong>Nunca</strong> colocar texto dentro do &iacute;cone. Todo &iacute;cone novo da marca (novos equipamentos, novos destaques, &iacute;cones de an&uacute;ncio) segue exatamente esta receita.</p>
+      <div class="tipo-row">
+        <div class="tipo-row-meta">
+          <div class="tipo-row-name">Título</div>
+          <div class="tipo-row-spec">36–56px · ExtraBold 800 · caixa alta</div>
+          <div class="tipo-row-uso">Nome do equipamento na arte</div>
+        </div>
+        <div style="font-size:clamp(24px,4vw,36px);font-weight:800;letter-spacing:-0.02em;line-height:1.1;text-transform:uppercase">Betoneira 400L</div>
+      </div>
+      <div class="tipo-row">
+        <div class="tipo-row-meta">
+          <div class="tipo-row-name">Preço</div>
+          <div class="tipo-row-spec">28–44px · ExtraBold 800 · amarelo</div>
+          <div class="tipo-row-uso">Valor da diária em destaque</div>
+        </div>
+        <div style="font-size:clamp(22px,3.5vw,32px);font-weight:800;letter-spacing:-0.02em;color:var(--amarelo)">R$ 100<span style="font-size:0.5em;font-weight:600;color:var(--texto)">/diária</span></div>
+      </div>
+      <div class="tipo-row">
+        <div class="tipo-row-meta">
+          <div class="tipo-row-name">Subtítulo</div>
+          <div class="tipo-row-spec">20–26px · SemiBold 600</div>
+          <div class="tipo-row-uso">Apoio do título, benefício</div>
+        </div>
+        <div style="font-size:clamp(17px,2.5vw,21px);font-weight:600;letter-spacing:-0.01em">Entrega rápida na sua obra</div>
+      </div>
+      <div class="tipo-row">
+        <div class="tipo-row-meta">
+          <div class="tipo-row-name">Corpo</div>
+          <div class="tipo-row-spec">15–17px · Regular 400</div>
+          <div class="tipo-row-uso">Legendas e textos longos</div>
+        </div>
+        <div style="font-size:15px;font-weight:400;line-height:1.7;color:var(--texto);max-width:460px">Alugue por diária, semana ou mês e pague só pelo tempo que usar. Equipamento revisado, pronto para trabalhar.</div>
+      </div>
+      <div class="tipo-row">
+        <div class="tipo-row-meta">
+          <div class="tipo-row-name">Label / Selo</div>
+          <div class="tipo-row-spec">10–12px · Bold 700 · espaçado</div>
+          <div class="tipo-row-uso">Badges, categorias, carimbos</div>
+        </div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:var(--amarelo)">Locação · Diária · Semanal · Mensal</div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px">
+      <h3 style="font-size:14px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--texto2);margin-bottom:20px">Pesos em uso</h3>
+      <div class="tipo-pesos">
+        <div class="tipo-peso-item">
+          <div class="tipo-peso-label">Black 900</div>
+          <div class="tipo-peso-demo" style="font-weight:900">AFL</div>
+          <div class="tipo-peso-num">Chamadas hero e números grandes</div>
+        </div>
+        <div class="tipo-peso-item">
+          <div class="tipo-peso-label">ExtraBold 800</div>
+          <div class="tipo-peso-demo" style="font-weight:800">AFL</div>
+          <div class="tipo-peso-num">Títulos e preços</div>
+        </div>
+        <div class="tipo-peso-item">
+          <div class="tipo-peso-label">Bold 700</div>
+          <div class="tipo-peso-demo" style="font-weight:700">AFL</div>
+          <div class="tipo-peso-num">Labels, selos e botões</div>
+        </div>
+        <div class="tipo-peso-item">
+          <div class="tipo-peso-label">SemiBold 600</div>
+          <div class="tipo-peso-demo" style="font-weight:600">AFL</div>
+          <div class="tipo-peso-num">Subtítulos e destaques</div>
+        </div>
+        <div class="tipo-peso-item">
+          <div class="tipo-peso-label">Regular 400</div>
+          <div class="tipo-peso-demo" style="font-weight:400">AFL</div>
+          <div class="tipo-peso-num">Corpo de texto e legendas</div>
+        </div>
+        <div class="tipo-peso-item">
+          <div class="tipo-peso-label">Light 300</div>
+          <div class="tipo-peso-demo" style="font-weight:300">AFL</div>
+          <div class="tipo-peso-num">Textos secundários</div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- APLICACOES -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-tag">06 &middot; Aplica&ccedil;&otilde;es</div>
-      <div class="section-title">A marca no <em>Instagram</em></div>
+<!-- ══════════════════ 05 LINGUAGEM VISUAL ══════════════════ -->
+<section style="background:var(--base2)">
+  <div class="wrap">
+    <p class="sec-label">05 — Linguagem Visual</p>
+    <h2 class="sec-title">Iconografia 3D<br>e elementos</h2>
+    <p class="sec-sub">O sistema visual que diferencia a AFL de qualquer locadora da região: equipamentos em 3D premium sobre fundo escuro, como vitrines de aplicativo.</p>
+
+    <div class="icones-row">
+      <div class="icone-3d"><img src="capas-destaques/capa-disponiveis-thumb.jpg" alt="Ícone 3D caixa de ferramentas" width="92" height="92" loading="lazy"><span>Ferramentas</span></div>
+      <div class="icone-3d"><img src="capas-destaques/capa-betoneiras-thumb.jpg" alt="Ícone 3D betoneira" width="92" height="92" loading="lazy"><span>Betoneira</span></div>
+      <div class="icone-3d"><img src="capas-destaques/capa-andaimes-thumb.jpg" alt="Ícone 3D andaime" width="92" height="92" loading="lazy"><span>Andaime</span></div>
+      <div class="icone-3d"><img src="capas-destaques/capa-balancins-thumb.jpg" alt="Ícone 3D balancim" width="92" height="92" loading="lazy"><span>Balancim</span></div>
+      <div class="icone-3d"><img src="capas-destaques/capa-precos-thumb.jpg" alt="Ícone 3D etiqueta de preço" width="92" height="92" loading="lazy"><span>Preço</span></div>
+      <div class="icone-3d"><img src="capas-destaques/capa-como-alugar-thumb.jpg" alt="Ícone 3D prancheta" width="92" height="92" loading="lazy"><span>Checklist</span></div>
+      <div class="icone-3d"><img src="capas-destaques/capa-nossa-loja-thumb.jpg" alt="Ícone 3D loja com pino de mapa" width="92" height="92" loading="lazy"><span>Loja</span></div>
     </div>
+
+    <div class="receita">
+      <h4>Receita oficial do ícone AFL</h4>
+      <p>Objeto em <strong>3D realista-estilizado</strong>, amarelo AFL (#FFC400) com detalhes em preto e cinza, <strong>centralizado</strong> ocupando cerca de 55% do quadro, leve perspectiva, <strong>iluminação de estúdio</strong> vinda de cima, sombra suave embaixo. Fundo em degradê de grafite (#16161A) para preto (#0A0A0C) com brilho radial discreto atrás do objeto. <strong>Proibido texto, letra, número ou logo dentro do ícone.</strong> Todo ícone novo da marca segue exatamente esta receita.</p>
+    </div>
+
+    <div class="elem-grid">
+      <div class="elem-card">
+        <div class="elem-preview">
+          <div class="demo-faixa">
+            <div class="demo-faixa-nome">Compactador de Solo</div>
+            <div class="demo-faixa-preco">R$ 180/diária</div>
+          </div>
+        </div>
+        <div class="elem-info">
+          <div class="elem-name">Faixa de Preço</div>
+          <div class="elem-desc">Toda foto real de equipamento recebe esta faixa escura com borda amarela: nome em 800 caixa alta e diária em amarelo. A foto prova, a faixa vende.</div>
+        </div>
+      </div>
+      <div class="elem-card">
+        <div class="elem-preview">
+          <span class="demo-selo">Disponível hoje</span>
+        </div>
+        <div class="elem-info">
+          <div class="elem-name">Selo Amarelo</div>
+          <div class="elem-desc">Pílula amarela com texto preto 800. Usada para disponibilidade, promoção e chamadas de ação curtas em artes e Stories.</div>
+        </div>
+      </div>
+      <div class="elem-card">
+        <div class="elem-preview">
+          <img class="demo-carimbo" src="logo-afl.png" alt="Carimbo da logo AFL" width="74" height="74" loading="lazy">
+        </div>
+        <div class="elem-info">
+          <div class="elem-name">Carimbo de Logo</div>
+          <div class="elem-desc">A logo assina todas as artes em tamanho discreto, sempre no mesmo canto escolhido para o feed — nunca como protagonista da peça.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 06 A MARCA EM USO ══════════════════ -->
+<section>
+  <div class="wrap">
+    <p class="sec-label">06 — A Marca em Uso</p>
+    <h2 class="sec-title">Aplicação<br>no Instagram</h2>
+    <p class="sec-sub">O Instagram é a vitrine principal da AFL. Perfil, destaques e feed seguem o padrão abaixo — o detalhamento completo está no Review do Instagram.</p>
+
     <div class="aplic-grid">
-      <div class="card">
-        <h4>Perfil padr&atilde;o</h4>
+      <div class="aplic-card">
+        <h4>Perfil Padrão</h4>
         <div class="bio-mock">
-          <div class="nome-perfil">AFL &middot; Loca&ccedil;&atilde;o de Equipamentos | Barreiras-BA</div>
+          <div class="nome-perfil">AFL · Locação de Equipamentos | Barreiras-BA</div>
           <div class="user">@afl.locacoes</div>
-          &#127959;&#65039; Betoneira, andaime, balancim e mais<br>
-          &#128176; Alugue por di&aacute;ria, semana ou m&ecirc;s<br>
-          &#128666; Entrega r&aacute;pida na sua obra<br>
-          &#128071; Or&ccedil;amento r&aacute;pido no WhatsApp<br>
+          🏗️ Betoneira, andaime, balancim e mais<br>
+          💰 Alugue por diária, semana ou mês<br>
+          🚚 Entrega rápida na sua obra<br>
+          👇 Orçamento rápido no WhatsApp<br>
           <span class="link">wa.me/5577999946195</span>
         </div>
-        <p style="margin-top:14px; font-size:0.8rem;">Regras do feed, destaques e posts fixados est&atilde;o detalhadas no <a href="review-instagram.html" style="color:#7CB8FF;">Review do Instagram</a>. Conte&uacute;do segue o padr&atilde;o 3-1-1 da ADS: a cada 5 conte&uacute;dos, 3 para alcan&ccedil;ar, 1 para aproximar, 1 para vender.</p>
+        <p>Bio validada com 133 de 150 caracteres. Conteúdo segue a cadência 3-1-1: a cada 5 conteúdos, 3 para alcançar gente nova, 1 para aproximar, 1 para vender. Regras de feed, fixados e capas para download no <a href="review-instagram.html">Review do Instagram</a>.</p>
       </div>
-      <div class="card mockup-wrap">
-        <h4>Refer&ecirc;ncia visual do perfil</h4>
-        <img src="mockup-perfil-novo-web.jpg" alt="Pr&eacute;via do perfil novo da AFL" width="1024" height="1536" loading="lazy">
-        <p><a href="mockup-perfil-novo.png">Abrir em alta resolu&ccedil;&atilde;o</a></p>
+      <div class="aplic-card">
+        <h4>Referência Visual</h4>
+        <img class="mockup-img" src="mockup-perfil-novo-web.jpg" alt="Prévia do perfil novo da AFL no Instagram" width="1024" height="1536" loading="lazy">
+        <p style="text-align:center"><a href="mockup-perfil-novo.png">Abrir prévia em alta resolução</a></p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- CERTO E ERRADO -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-tag">07 &middot; Na pr&aacute;tica</div>
-      <div class="section-title">Certo e <em>errado</em></div>
-    </div>
-    <div class="ce-grid">
-      <div class="ce-col certo">
-        <h3>Sempre fazer</h3>
-        <ul>
-          <li>Fundo escuro (grafite ou preto) com amarelo AFL como cor de a&ccedil;&atilde;o</li>
-          <li>Montserrat em todas as artes: t&iacute;tulo 800 em caixa alta, apoio 400</li>
-          <li>Foto real de equipamento sempre com faixa escura, nome e pre&ccedil;o da di&aacute;ria</li>
-          <li>Logo como carimbo, sempre no mesmo canto da arte</li>
-          <li>Pre&ccedil;o vis&iacute;vel e convite para o WhatsApp em todo post de equipamento</li>
-          <li>&Iacute;cones novos seguindo a receita 3D da se&ccedil;&atilde;o 05</li>
-        </ul>
+<!-- ══════════════════ 07 TOM DE VOZ ══════════════════ -->
+<section style="background:var(--base2)">
+  <div class="wrap">
+    <p class="sec-label">07 — Tom de Voz</p>
+    <h2 class="sec-title">Como a AFL fala</h2>
+    <p class="sec-sub">O parceiro da obra: casual, direto e acessível. Fala de resultado, nunca de especificação. Todo texto termina com um convite para o WhatsApp.</p>
+
+    <div class="voz-grid">
+      <div class="voz-col fala">
+        <h4>A AFL fala assim</h4>
+        <div class="voz-frase">
+          <div class="f">Sua laje sai hoje. Betoneira entregue na obra por R$ 100 a diária.</div>
+          <div class="pq">Resultado concreto + preço na cara + entrega</div>
+        </div>
+        <div class="voz-frase">
+          <div class="f">Compra não, chefe. Aluga, usa e devolve.</div>
+          <div class="pq">Linguagem de canteiro de obra, direta e próxima</div>
+        </div>
+        <div class="voz-frase">
+          <div class="f">Chama no WhatsApp que a gente resolve agora.</div>
+          <div class="pq">Convite claro, resposta rápida, sem burocracia</div>
+        </div>
       </div>
-      <div class="ce-col errado">
-        <h3>Nunca fazer</h3>
-        <ul>
-          <li>Misturar estilos: arte laranja, arte clara e template gen&eacute;rico no mesmo feed</li>
-          <li>Post s&oacute; com a logo, sem equipamento, pre&ccedil;o ou convite</li>
-          <li>Texto dentro das capas de destaque ou dos &iacute;cones 3D</li>
-          <li>Trocar a fonte da marca por outra &ldquo;parecida&rdquo; em alguma arte</li>
-          <li>Foto crua publicada sem faixa de nome e pre&ccedil;o</li>
-          <li>Amarelo diferente do oficial (#FFC400) nas artes</li>
-        </ul>
+      <div class="voz-col nao-fala">
+        <h4>A AFL não fala assim</h4>
+        <div class="voz-frase">
+          <div class="f">Dispomos de soluções em locação de equipamentos.</div>
+          <div class="pq">Formal e vazio — ninguém fala assim na obra</div>
+        </div>
+        <div class="voz-frase">
+          <div class="f">Betoneira 400 litros, motor monofásico 2CV, 220V.</div>
+          <div class="pq">Ficha técnica não vende; resultado vende. Especificação só se o cliente pedir</div>
+        </div>
+        <div class="voz-frase">
+          <div class="f">Entre em contato através dos nossos canais de atendimento.</div>
+          <div class="pq">Rodeio — o canal é um só: o WhatsApp, com link direto</div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- FOOTER -->
-<div class="footer">
-  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
-  <div class="footer-sub">Brandbook &mdash; AFL &mdash; 19/11/2026</div>
+<div class="bb-footer">
+  <div class="bb-footer-brand">ADS <em>COMPANY</em> — Assessoria de Marketing e Performance</div>
+  <div class="bb-footer-sub">Brandbook AFL · v1.0 · 19/11/2026</div>
 </div>
 
 </body>
