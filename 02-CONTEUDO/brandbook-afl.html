@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Brandbook da AFL — logo, cores, tipografia, estilo visual e aplicações no Instagram, para padronizar toda a comunicação da marca.">
+<title>Brandbook &mdash; AFL | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --amarelo: #FFC400;
+    --amarelo-escuro: #E0A800;
+    --grafite: #16161A;
+    --preto: #0A0A0C;
+    --cinza-card: #141418;
+    --cinza-medio: #2A2A2E;
+    --cinza-claro: #9A9A9A;
+    --cinza-border: rgba(255,255,255,0.07);
+    --branco: #F5F5F5;
+    --verde: #22C55E;
+    --vermelho: #EF4444;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --marca: 'Montserrat', 'Inter', sans-serif;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--preto);
+    color: var(--branco);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== TOP BAR ===== */
+  .top-bar {
+    background: rgba(10,10,12,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--cinza-border);
+    padding: 14px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-bar-name {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+  }
+  .top-bar-name em { font-style: italic; color: var(--amarelo); }
+  .btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amarelo);
+    text-decoration: none;
+    border: 1px solid rgba(255,196,0,0.3);
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: all 0.3s;
+  }
+  .btn-voltar:hover { background: var(--amarelo); color: #0A0A0C; }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 90px 32px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #121014 0%, var(--preto) 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -220px; left: 50%;
+    transform: translateX(-50%);
+    width: 820px; height: 820px;
+    background: radial-gradient(circle, rgba(255,196,0,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--amarelo);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero h1 em { font-style: italic; color: var(--amarelo); }
+  .hero-line { width: 60px; height: 2px; background: var(--amarelo); margin: 22px auto; }
+  .hero p {
+    font-size: 0.95rem;
+    color: var(--cinza-claro);
+    font-weight: 300;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ===== ESTRUTURA ===== */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+  .section { padding: 56px 0 24px; }
+  .section-header { text-align: center; margin-bottom: 40px; }
+  .section-tag {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--amarelo);
+    margin-bottom: 12px;
+  }
+  .section-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; }
+  .section-title em { font-style: italic; color: var(--amarelo); }
+  .divider {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,196,0,0.18), transparent);
+  }
+  .card {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .card h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amarelo);
+    margin-bottom: 14px;
+  }
+  .card p { font-size: 0.88rem; color: #BBB; font-weight: 300; margin-bottom: 8px; }
+  .card strong { color: var(--branco); font-weight: 600; }
+
+  /* ===== ESSENCIA ===== */
+  .essencia-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  @media (max-width: 760px) { .essencia-grid { grid-template-columns: 1fr; } }
+  .essencia-grid .card p { flex: 1; }
+
+  /* ===== LOGO ===== */
+  .logo-grid { display: grid; grid-template-columns: 220px 1fr; gap: 20px; align-items: start; }
+  @media (max-width: 760px) { .logo-grid { grid-template-columns: 1fr; } }
+  .logo-amostra {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 28px;
+    text-align: center;
+  }
+  .logo-amostra img { width: 130px; height: 130px; border-radius: 50%; }
+  .logo-amostra p { font-size: 0.72rem; color: var(--cinza-claro); margin-top: 12px; font-weight: 300; }
+  .regras-logo { list-style: none; }
+  .regras-logo li {
+    font-size: 0.86rem;
+    color: #BBB;
+    font-weight: 300;
+    padding: 9px 0 9px 26px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .regras-logo li:last-child { border-bottom: none; }
+  .regras-logo li::before { content: '\2713'; position: absolute; left: 0; color: var(--amarelo); font-weight: 700; }
+  .regras-logo strong { color: var(--branco); }
+
+  /* ===== CORES ===== */
+  .cores-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  @media (max-width: 860px) { .cores-grid { grid-template-columns: repeat(2, 1fr); } }
+  .cor {
+    border-radius: 14px;
+    border: 1px solid var(--cinza-border);
+    overflow: hidden;
+    background: var(--cinza-card);
+  }
+  .cor-bloco { height: 96px; }
+  .cor-info { padding: 14px 16px; }
+  .cor-nome { font-size: 0.78rem; font-weight: 600; color: var(--branco); }
+  .cor-hex { font-size: 0.72rem; color: var(--cinza-claro); font-weight: 300; }
+  .cor-uso { font-size: 0.68rem; color: var(--cinza-claro); font-weight: 300; margin-top: 6px; line-height: 1.5; }
+
+  /* ===== TIPOGRAFIA ===== */
+  .tipo-card { font-family: var(--marca); }
+  .tipo-amostra { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 18px 0; }
+  .tipo-amostra:last-child { border-bottom: none; }
+  .tipo-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cinza-claro); margin-bottom: 8px; }
+  .tipo-800 { font-weight: 800; font-size: 1.6rem; text-transform: uppercase; letter-spacing: 0.02em; }
+  .tipo-800 span { color: var(--amarelo); }
+  .tipo-600 { font-weight: 600; font-size: 1.1rem; }
+  .tipo-400 { font-weight: 400; font-size: 0.95rem; color: #CCC; }
+
+  /* ===== ICONOGRAFIA 3D ===== */
+  .icones-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; }
+  .icone-3d { width: 86px; text-align: center; }
+  .icone-3d img { width: 78px; height: 78px; border-radius: 50%; border: 2px solid var(--amarelo); display: block; margin: 0 auto 6px; }
+  .icone-3d span { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #CCC; }
+
+  /* ===== APLICACOES ===== */
+  .aplic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .aplic-grid { grid-template-columns: 1fr; } }
+  .bio-mock {
+    background: #0D0D0F;
+    border: 1px solid var(--cinza-medio);
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: #CCC;
+  }
+  .bio-mock .nome-perfil { font-weight: 700; color: var(--branco); font-size: 0.92rem; }
+  .bio-mock .user { color: var(--cinza-claro); font-size: 0.78rem; margin-bottom: 10px; }
+  .bio-mock .link { color: #7CB8FF; }
+  .mockup-wrap { text-align: center; }
+  .mockup-wrap img { width: 100%; max-width: 300px; border-radius: 12px; border: 1px solid var(--cinza-medio); }
+  .mockup-wrap p { font-size: 0.75rem; color: var(--cinza-claro); margin-top: 10px; font-weight: 300; }
+  .mockup-wrap a { color: #7CB8FF; }
+
+  /* ===== CERTO E ERRADO ===== */
+  .ce-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .ce-grid { grid-template-columns: 1fr; } }
+  .ce-col { background: var(--cinza-card); border: 1px solid var(--cinza-border); border-radius: 14px; padding: 28px; }
+  .ce-col.certo { border-top: 3px solid var(--verde); }
+  .ce-col.errado { border-top: 3px solid var(--vermelho); }
+  .ce-col h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; margin-bottom: 18px; }
+  .ce-col ul { list-style: none; }
+  .ce-col li {
+    font-size: 0.86rem;
+    color: #BBB;
+    font-weight: 300;
+    padding: 9px 0 9px 26px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .ce-col li:last-child { border-bottom: none; }
+  .certo li::before { content: '\2713'; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
+  .errado li::before { content: '\2715'; position: absolute; left: 0; color: var(--vermelho); font-weight: 700; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 48px 32px 32px;
+    border-top: 1px solid var(--cinza-border);
+    margin-top: 56px;
+  }
+  .footer-brand { font-family: var(--serif); font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .footer-brand em { font-style: italic; color: var(--amarelo); }
+  .footer-sub { font-size: 0.72rem; color: rgba(255,255,255,0.3); font-weight: 300; }
+
+  @media (max-width: 600px) {
+    .top-bar { padding: 12px 16px; }
+    .top-bar-name { display: none; }
+    .hero { padding: 56px 20px 40px; }
+    .container { padding: 0 16px; }
+    .section { padding: 40px 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span class="top-bar-name">ADS <em>Company</em></span>
+  <a href="../index.html" class="btn-voltar">&larr; Voltar &agrave; Central</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Identidade da Marca</div>
+  <h1>Brandbook <em>AFL</em></h1>
+  <div class="hero-line"></div>
+  <p>O guia da marca AFL &mdash; Avante Ferramentas Locadora. Tudo que for criado daqui para a frente (posts, Stories, capas, an&uacute;ncios, artes de pre&ccedil;o) segue o que est&aacute; neste documento, para a marca ter uma cara s&oacute; em qualquer lugar.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+
+  <!-- ESSENCIA -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">01 &middot; Ess&ecirc;ncia</div>
+      <div class="section-title">O que a marca <em>&eacute;</em></div>
+    </div>
+    <div class="essencia-grid">
+      <div class="card">
+        <h4>Promessa</h4>
+        <p>O equipamento certo na sua obra, no dia em que voc&ecirc; precisa, por um pre&ccedil;o que cabe no or&ccedil;amento da obra.</p>
+      </div>
+      <div class="card">
+        <h4>Personalidade</h4>
+        <p>O parceiro da obra: fala simples, resolve r&aacute;pido e cumpre o que promete. Sem jarg&atilde;o, sem enrola&ccedil;&atilde;o.</p>
+      </div>
+      <div class="card">
+        <h4>Tom de voz</h4>
+        <p>Casual e direto, sempre acess&iacute;vel. Fala de resultado (&ldquo;obra andando&rdquo;), nunca de especifica&ccedil;&atilde;o t&eacute;cnica. Todo texto termina com um convite para o WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGO -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">02 &middot; Logo</div>
+      <div class="section-title">Como usar a <em>marca</em></div>
+    </div>
+    <div class="logo-grid">
+      <div class="logo-amostra">
+        <img src="logo-afl-amostra.png" alt="Logo AFL: pr&eacute;dios brancos sobre fundo preto" width="130" height="130" loading="lazy">
+        <p>Pr&eacute;dios brancos + sigla AFL sobre fundo preto</p>
+      </div>
+      <div class="card">
+        <h4>Regras de uso</h4>
+        <ul class="regras-logo">
+          <li><strong>Vers&atilde;o oficial:</strong> pr&eacute;dios brancos com a sigla AFL, sempre sobre fundo escuro (preto ou grafite).</li>
+          <li><strong>Assinatura, n&atilde;o publica&ccedil;&atilde;o:</strong> a logo aparece como carimbo em todas as artes (sempre no mesmo canto), mas nunca mais como post sozinha.</li>
+          <li><strong>Respiro:</strong> manter espa&ccedil;o livre ao redor da logo de pelo menos metade da altura dela.</li>
+          <li><strong>N&atilde;o fazer:</strong> esticar, inclinar, trocar a cor, aplicar sombra colorida ou colocar sobre foto polu&iacute;da sem faixa escura por tr&aacute;s.</li>
+          <li><strong>Arquivo-fonte:</strong> solicitar ao cliente o arquivo original em alta resolu&ccedil;&atilde;o (PNG com fundo transparente) para a pasta da marca.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">03 &middot; Cores</div>
+      <div class="section-title">A paleta <em>oficial</em></div>
+    </div>
+    <div class="cores-grid">
+      <div class="cor">
+        <div class="cor-bloco" style="background:#FFC400;"></div>
+        <div class="cor-info">
+          <div class="cor-nome">Amarelo AFL</div>
+          <div class="cor-hex">#FFC400</div>
+          <div class="cor-uso">Cor de a&ccedil;&atilde;o: equipamentos, bot&otilde;es, pre&ccedil;os e destaques. ~20% da arte.</div>
+        </div>
+      </div>
+      <div class="cor">
+        <div class="cor-bloco" style="background:#E0A800;"></div>
+        <div class="cor-info">
+          <div class="cor-nome">Amarelo Escuro</div>
+          <div class="cor-hex">#E0A800</div>
+          <div class="cor-uso">Sombras e volumes do amarelo nos elementos 3D.</div>
+        </div>
+      </div>
+      <div class="cor">
+        <div class="cor-bloco" style="background:#16161A;"></div>
+        <div class="cor-info">
+          <div class="cor-nome">Grafite</div>
+          <div class="cor-hex">#16161A</div>
+          <div class="cor-uso">Fundo padr&atilde;o das artes e capas. ~60% da arte.</div>
+        </div>
+      </div>
+      <div class="cor">
+        <div class="cor-bloco" style="background:#0A0A0C;"></div>
+        <div class="cor-info">
+          <div class="cor-nome">Preto Profundo</div>
+          <div class="cor-hex">#0A0A0C</div>
+          <div class="cor-uso">Degrad&ecirc; com o grafite e texto sobre amarelo.</div>
+        </div>
+      </div>
+      <div class="cor">
+        <div class="cor-bloco" style="background:#F5F5F5;"></div>
+        <div class="cor-info">
+          <div class="cor-nome">Branco Gelo</div>
+          <div class="cor-hex">#F5F5F5</div>
+          <div class="cor-uso">Textos sobre fundo escuro e logo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIPOGRAFIA -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">04 &middot; Tipografia</div>
+      <div class="section-title">Como a marca <em>escreve</em></div>
+    </div>
+    <div class="card tipo-card">
+      <h4 style="font-family:var(--sans);">Montserrat &mdash; fonte &uacute;nica da marca (gratuita no Google Fonts e no Canva)</h4>
+      <div class="tipo-amostra">
+        <div class="tipo-label">Extrabold 800 &middot; t&iacute;tulos e pre&ccedil;os, em caixa alta</div>
+        <div class="tipo-800">Betoneira <span>R$ 100</span>/di&aacute;ria</div>
+      </div>
+      <div class="tipo-amostra">
+        <div class="tipo-label">Semibold 600 &middot; subt&iacute;tulos e nomes de equipamento</div>
+        <div class="tipo-600">Entrega r&aacute;pida na sua obra</div>
+      </div>
+      <div class="tipo-amostra">
+        <div class="tipo-label">Regular 400 &middot; textos de apoio e legendas</div>
+        <div class="tipo-400">Alugue por di&aacute;ria, semana ou m&ecirc;s. Pe&ccedil;a seu or&ccedil;amento pelo WhatsApp.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ICONOGRAFIA 3D -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">05 &middot; Estilo Visual</div>
+      <div class="section-title">Iconografia <em>3D</em></div>
+    </div>
+    <div class="card">
+      <h4>O sistema de &iacute;cones da AFL</h4>
+      <div class="icones-row">
+        <div class="icone-3d"><img src="capas-destaques/capa-disponiveis-thumb.jpg" alt="&Iacute;cone 3D caixa de ferramentas" width="78" height="78" loading="lazy"><span>Ferramentas</span></div>
+        <div class="icone-3d"><img src="capas-destaques/capa-betoneiras-thumb.jpg" alt="&Iacute;cone 3D betoneira" width="78" height="78" loading="lazy"><span>Betoneira</span></div>
+        <div class="icone-3d"><img src="capas-destaques/capa-andaimes-thumb.jpg" alt="&Iacute;cone 3D andaime" width="78" height="78" loading="lazy"><span>Andaime</span></div>
+        <div class="icone-3d"><img src="capas-destaques/capa-balancins-thumb.jpg" alt="&Iacute;cone 3D balancim" width="78" height="78" loading="lazy"><span>Balancim</span></div>
+        <div class="icone-3d"><img src="capas-destaques/capa-precos-thumb.jpg" alt="&Iacute;cone 3D etiqueta de pre&ccedil;o" width="78" height="78" loading="lazy"><span>Pre&ccedil;o</span></div>
+        <div class="icone-3d"><img src="capas-destaques/capa-como-alugar-thumb.jpg" alt="&Iacute;cone 3D prancheta" width="78" height="78" loading="lazy"><span>Checklist</span></div>
+        <div class="icone-3d"><img src="capas-destaques/capa-nossa-loja-thumb.jpg" alt="&Iacute;cone 3D loja com pino de mapa" width="78" height="78" loading="lazy"><span>Loja</span></div>
+      </div>
+      <p><strong>Receita do estilo:</strong> objeto em 3D realista-estilizado, amarelo AFL com detalhes em preto e cinza, centralizado sobre fundo grafite em degrad&ecirc; com brilho suave atr&aacute;s, ilumina&ccedil;&atilde;o de est&uacute;dio vinda de cima e sombra suave embaixo. <strong>Nunca</strong> colocar texto dentro do &iacute;cone. Todo &iacute;cone novo da marca (novos equipamentos, novos destaques, &iacute;cones de an&uacute;ncio) segue exatamente esta receita.</p>
+    </div>
+  </div>
+
+  <!-- APLICACOES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">06 &middot; Aplica&ccedil;&otilde;es</div>
+      <div class="section-title">A marca no <em>Instagram</em></div>
+    </div>
+    <div class="aplic-grid">
+      <div class="card">
+        <h4>Perfil padr&atilde;o</h4>
+        <div class="bio-mock">
+          <div class="nome-perfil">AFL &middot; Loca&ccedil;&atilde;o de Equipamentos | Barreiras-BA</div>
+          <div class="user">@afl.locacoes</div>
+          &#127959;&#65039; Betoneira, andaime, balancim e mais<br>
+          &#128176; Alugue por di&aacute;ria, semana ou m&ecirc;s<br>
+          &#128666; Entrega r&aacute;pida na sua obra<br>
+          &#128071; Or&ccedil;amento r&aacute;pido no WhatsApp<br>
+          <span class="link">wa.me/5577999946195</span>
+        </div>
+        <p style="margin-top:14px; font-size:0.8rem;">Regras do feed, destaques e posts fixados est&atilde;o detalhadas no <a href="review-instagram.html" style="color:#7CB8FF;">Review do Instagram</a>. Conte&uacute;do segue o padr&atilde;o 3-1-1 da ADS: a cada 5 conte&uacute;dos, 3 para alcan&ccedil;ar, 1 para aproximar, 1 para vender.</p>
+      </div>
+      <div class="card mockup-wrap">
+        <h4>Refer&ecirc;ncia visual do perfil</h4>
+        <img src="mockup-perfil-novo-web.jpg" alt="Pr&eacute;via do perfil novo da AFL" width="1024" height="1536" loading="lazy">
+        <p><a href="mockup-perfil-novo.png">Abrir em alta resolu&ccedil;&atilde;o</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTO E ERRADO -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">07 &middot; Na pr&aacute;tica</div>
+      <div class="section-title">Certo e <em>errado</em></div>
+    </div>
+    <div class="ce-grid">
+      <div class="ce-col certo">
+        <h3>Sempre fazer</h3>
+        <ul>
+          <li>Fundo escuro (grafite ou preto) com amarelo AFL como cor de a&ccedil;&atilde;o</li>
+          <li>Montserrat em todas as artes: t&iacute;tulo 800 em caixa alta, apoio 400</li>
+          <li>Foto real de equipamento sempre com faixa escura, nome e pre&ccedil;o da di&aacute;ria</li>
+          <li>Logo como carimbo, sempre no mesmo canto da arte</li>
+          <li>Pre&ccedil;o vis&iacute;vel e convite para o WhatsApp em todo post de equipamento</li>
+          <li>&Iacute;cones novos seguindo a receita 3D da se&ccedil;&atilde;o 05</li>
+        </ul>
+      </div>
+      <div class="ce-col errado">
+        <h3>Nunca fazer</h3>
+        <ul>
+          <li>Misturar estilos: arte laranja, arte clara e template gen&eacute;rico no mesmo feed</li>
+          <li>Post s&oacute; com a logo, sem equipamento, pre&ccedil;o ou convite</li>
+          <li>Texto dentro das capas de destaque ou dos &iacute;cones 3D</li>
+          <li>Trocar a fonte da marca por outra &ldquo;parecida&rdquo; em alguma arte</li>
+          <li>Foto crua publicada sem faixa de nome e pre&ccedil;o</li>
+          <li>Amarelo diferente do oficial (#FFC400) nas artes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Brandbook &mdash; AFL &mdash; 19/11/2026</div>
+</div>
+
+</body>
+</html>
