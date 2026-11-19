@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Diagnóstico do Instagram da AFL e plano de reestruturação: nome, bio, destaques, posts fixados e padrão do feed.">
+<title>Review do Instagram &mdash; AFL | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --laranja-hover: #FF7A33;
+    --preto: #060606;
+    --cinza-escuro: #111;
+    --cinza-card: #141414;
+    --cinza-card-hover: #1A1A1A;
+    --cinza-medio: #2A2A2A;
+    --cinza-claro: #888;
+    --cinza-border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --verde: #22C55E;
+    --amarelo: #FFCB05;
+    --vermelho: #EF4444;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--preto);
+    color: var(--branco);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== TOP BAR ===== */
+  .top-bar {
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--cinza-border);
+    padding: 14px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-bar-name {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+  }
+  .top-bar-name em { font-style: italic; color: var(--laranja); }
+  .btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    text-decoration: none;
+    border: 1px solid rgba(255,92,0,0.25);
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: all 0.3s;
+  }
+  .btn-voltar:hover { background: var(--laranja); color: #fff; }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 80px 32px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #0A0705 0%, var(--preto) 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(255,92,0,0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero h1 em { font-style: italic; color: var(--laranja); }
+  .hero-line { width: 60px; height: 2px; background: var(--laranja); margin: 22px auto; }
+  .hero p {
+    font-size: 0.95rem;
+    color: var(--cinza-claro);
+    font-weight: 300;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ===== CONTAINER / SECTION ===== */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+  .section { padding: 56px 0 24px; }
+  .section-header { text-align: center; margin-bottom: 40px; }
+  .section-tag {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  .section-title em { font-style: italic; color: var(--laranja); }
+  .divider {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,92,0,0.15), transparent);
+    margin: 32px 0 0;
+  }
+
+  /* ===== RAIO-X NUMEROS ===== */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 760px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+  .stat-box {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    color: var(--laranja);
+    line-height: 1.1;
+  }
+  .stat-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cinza-claro);
+    margin-top: 8px;
+  }
+
+  .perfil-atual {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-top: 20px;
+  }
+  .perfil-atual h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    margin-bottom: 14px;
+  }
+  .perfil-atual p { font-size: 0.88rem; color: #BBB; font-weight: 300; margin-bottom: 6px; }
+  .perfil-atual strong { color: var(--branco); font-weight: 600; }
+
+  /* ===== DIAGNOSTICO ===== */
+  .diag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .diag-grid { grid-template-columns: 1fr; } }
+  .diag-col {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .diag-col.pontos-fortes { border-top: 3px solid var(--verde); }
+  .diag-col.pontos-corrigir { border-top: 3px solid var(--vermelho); }
+  .diag-col h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 18px;
+  }
+  .diag-col ul { list-style: none; }
+  .diag-col li {
+    font-size: 0.86rem;
+    color: #BBB;
+    font-weight: 300;
+    padding: 9px 0 9px 26px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .diag-col li:last-child { border-bottom: none; }
+  .diag-col li strong { color: var(--branco); font-weight: 600; }
+  .pontos-fortes li::before { content: '✓'; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
+  .pontos-corrigir li::before { content: '✕'; position: absolute; left: 0; color: var(--vermelho); font-weight: 700; }
+
+  /* ===== ANTES / DEPOIS BIO ===== */
+  .bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .bio-grid { grid-template-columns: 1fr; } }
+  .bio-card {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .bio-card .rotulo {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+  }
+  .rotulo-antes { background: rgba(239,68,68,0.1); color: var(--vermelho); border: 1px solid rgba(239,68,68,0.25); }
+  .rotulo-depois { background: rgba(34,197,94,0.1); color: var(--verde); border: 1px solid rgba(34,197,94,0.25); }
+  .bio-mock {
+    background: #0D0D0D;
+    border: 1px solid var(--cinza-medio);
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: #CCC;
+  }
+  .bio-mock .nome-perfil { font-weight: 700; color: var(--branco); font-size: 0.92rem; }
+  .bio-mock .user { color: var(--cinza-claro); font-size: 0.78rem; margin-bottom: 10px; }
+  .bio-mock .link { color: #7CB8FF; }
+  .bio-obs { font-size: 0.78rem; color: var(--cinza-claro); font-weight: 300; margin-top: 14px; line-height: 1.6; }
+
+  /* ===== DESTAQUES ===== */
+  .destaques-wrap {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .destaques-row {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0 8px;
+  }
+  .destaque-item { text-align: center; width: 84px; }
+  .destaque-circ {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #1C1C1C, #0E0E0E);
+    border: 2px solid var(--laranja);
+  }
+  .destaque-nome {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #CCC;
+  }
+  .destaques-wrap > p { font-size: 0.85rem; color: #BBB; font-weight: 300; }
+
+  /* ===== FIXADOS ===== */
+  .fixados-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 760px) { .fixados-grid { grid-template-columns: 1fr; } }
+  .fixado-card {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 24px;
+    position: relative;
+  }
+  .fixado-num {
+    position: absolute;
+    top: -14px; left: 20px;
+    width: 28px; height: 28px;
+    background: var(--laranja);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .fixado-card h4 { font-family: var(--serif); font-size: 1rem; font-weight: 400; margin: 8px 0 10px; color: var(--laranja); }
+  .fixado-card p { font-size: 0.82rem; color: #BBB; font-weight: 300; line-height: 1.6; }
+
+  /* ===== FEED REGRAS ===== */
+  .regras-lista { display: grid; gap: 14px; }
+  .regra {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-left: 3px solid var(--laranja);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .regra-icone { font-size: 1.3rem; flex-shrink: 0; }
+  .regra h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 4px; }
+  .regra p { font-size: 0.83rem; color: #AAA; font-weight: 300; line-height: 1.6; }
+
+  /* ===== CHECKLIST ===== */
+  .check-lista { display: grid; gap: 10px; }
+  .check-item {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.87rem;
+    color: #CCC;
+  }
+  .check-fase {
+    flex-shrink: 0;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    background: rgba(255,92,0,0.08);
+    border: 1px solid rgba(255,92,0,0.2);
+    padding: 4px 10px;
+    border-radius: 10px;
+  }
+
+  /* ===== PRINT ===== */
+  .print-wrap {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+  }
+  .print-wrap img {
+    max-width: 100%;
+    max-height: 720px;
+    border-radius: 10px;
+    border: 1px solid var(--cinza-medio);
+  }
+  .print-wrap p { font-size: 0.75rem; color: var(--cinza-claro); margin-top: 12px; font-weight: 300; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 48px 32px 32px;
+    border-top: 1px solid var(--cinza-border);
+    margin-top: 56px;
+  }
+  .footer-brand { font-family: var(--serif); font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .footer-brand em { font-style: italic; color: var(--laranja); }
+  .footer-sub { font-size: 0.72rem; color: rgba(255,255,255,0.3); font-weight: 300; }
+
+  @media (max-width: 600px) {
+    .top-bar { padding: 12px 16px; }
+    .top-bar-name { display: none; }
+    .hero { padding: 56px 20px 40px; }
+    .container { padding: 0 16px; }
+    .section { padding: 40px 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span class="top-bar-name">ADS <em>Company</em></span>
+  <a href="../index.html" class="btn-voltar">&larr; Voltar &agrave; Central</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Instagram &middot; Diagn&oacute;stico e Reestrutura&ccedil;&atilde;o</div>
+  <h1>Review do <em>Instagram</em> AFL</h1>
+  <div class="hero-line"></div>
+  <p>An&aacute;lise completa do perfil atual da AFL e o plano de reestrutura&ccedil;&atilde;o para transformar o Instagram em uma vitrine que gera or&ccedil;amentos pelo WhatsApp todos os dias.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- RAIO-X -->
+<div class="container">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Fotografia do momento</div>
+      <div class="section-title">O perfil <em>hoje</em></div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-num">23</div><div class="stat-label">Publica&ccedil;&otilde;es</div></div>
+      <div class="stat-box"><div class="stat-num">108</div><div class="stat-label">Seguidores</div></div>
+      <div class="stat-box"><div class="stat-num">6</div><div class="stat-label">Destaques</div></div>
+      <div class="stat-box"><div class="stat-num">3+</div><div class="stat-label">Estilos visuais misturados</div></div>
+    </div>
+
+    <div class="perfil-atual">
+      <h4>Dados do perfil (19/11/2026)</h4>
+      <p><strong>Usu&aacute;rio:</strong> @avante_ferramentas_locadora01</p>
+      <p><strong>Nome exibido:</strong> AFL</p>
+      <p><strong>Bio:</strong> &ldquo;T&Aacute; PRECISANDO DE AGILIZAR A SUA OBRA? TEMOS A FERRAMENTA CERTA PARA LOCA&Ccedil;&Atilde;O COM PRE&Ccedil;O JUSTO!&rdquo; + Barreiras BA + WhatsApp</p>
+      <p><strong>Destaques:</strong> DISPON&Iacute;VEIS, BETONEIRAS, BALANCINH..., Andaimes, Betoneira (repetido) e um sem t&iacute;tulo claro</p>
+      <p><strong>Fixados no topo:</strong> 3 posts &mdash; dois deles s&atilde;o apenas a logo, um &eacute; a foto da fachada com os s&oacute;cios</p>
+    </div>
+  </div>
+
+  <!-- DIAGNOSTICO -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Diagn&oacute;stico</div>
+      <div class="section-title">O que funciona e o que <em>trava</em> o perfil</div>
+    </div>
+
+    <div class="diag-grid">
+      <div class="diag-col pontos-fortes">
+        <h3>O que j&aacute; funciona</h3>
+        <ul>
+          <li><strong>Pre&ccedil;os expostos nas artes</strong> &mdash; para quem compara pre&ccedil;o antes de ligar, isso j&aacute; responde a primeira pergunta e filtra curiosos.</li>
+          <li><strong>Fotos reais dos equipamentos</strong> &mdash; betoneira, compactador, andaimes e marteletes de verdade passam mais confian&ccedil;a que banco de imagens.</li>
+          <li><strong>Foto da fachada com os s&oacute;cios</strong> &mdash; mostra que a empresa existe, tem endere&ccedil;o e tem dono com rosto. Isso vende.</li>
+          <li><strong>Destaques por tipo de equipamento</strong> &mdash; a ideia est&aacute; certa, s&oacute; falta padr&atilde;o e organiza&ccedil;&atilde;o.</li>
+          <li><strong>Localiza&ccedil;&atilde;o clara</strong> &mdash; Barreiras-BA aparece na bio e nas artes.</li>
+        </ul>
+      </div>
+
+      <div class="diag-col pontos-corrigir">
+        <h3>O que precisa mudar</h3>
+        <ul>
+          <li><strong>Nome n&atilde;o aparece na busca</strong> &mdash; quem procura &ldquo;aluguel de betoneira Barreiras&rdquo; n&atilde;o encontra um perfil chamado s&oacute; &ldquo;AFL&rdquo;.</li>
+          <li><strong>Usu&aacute;rio longo e com &ldquo;01&rdquo;</strong> &mdash; @avante_ferramentas_locadora01 &eacute; dif&iacute;cil de ditar por telefone e passa impress&atilde;o de perfil reserva.</li>
+          <li><strong>Bio toda em caixa alta e sem bot&atilde;o claro</strong> &mdash; grita, mas n&atilde;o diz o que fazer. O WhatsApp aparece cortado.</li>
+          <li><strong>Dois posts fixados iguais (s&oacute; logo)</strong> &mdash; o espa&ccedil;o mais nobre do perfil n&atilde;o mostra equipamento, pre&ccedil;o nem prova.</li>
+          <li><strong>Destaques duplicados e sem padr&atilde;o</strong> &mdash; &ldquo;BETONEIRAS&rdquo; e &ldquo;Betoneira&rdquo; convivem; capas todas diferentes.</li>
+          <li><strong>Feed com 3+ estilos visuais</strong> &mdash; arte amarela, arte laranja, logo preta e foto crua misturadas. O perfil parece de v&aacute;rias empresas.</li>
+          <li><strong>Quase nenhum v&iacute;deo</strong> &mdash; e &eacute; v&iacute;deo (Reels) que alcan&ccedil;a quem ainda n&atilde;o segue o perfil.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIO ANTES E DEPOIS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Reestrutura&ccedil;&atilde;o &middot; Passo 1</div>
+      <div class="section-title">Nome e bio: antes e <em>depois</em></div>
+    </div>
+
+    <div class="bio-grid">
+      <div class="bio-card">
+        <span class="rotulo rotulo-antes">Como est&aacute;</span>
+        <div class="bio-mock">
+          <div class="nome-perfil">AFL</div>
+          <div class="user">@avante_ferramentas_locadora01</div>
+          T&Aacute; PRECISANDO DE AGILIZAR A SUA OBRA?<br>
+          TEMOS A FERRAMENTA CERTA PARA LOCA&Ccedil;&Atilde;O COM PRE&Ccedil;O JUSTO!<br>
+          Barreiras BA<br>
+          WhatsApp -... mais
+        </div>
+        <p class="bio-obs">O nome &ldquo;AFL&rdquo; sozinho n&atilde;o &eacute; encontrado por quem busca &ldquo;loca&ccedil;&atilde;o&rdquo; ou &ldquo;aluguel de equipamentos&rdquo;. A bio n&atilde;o tem link clic&aacute;vel e o n&uacute;mero fica escondido atr&aacute;s do &ldquo;mais&rdquo;.</p>
+      </div>
+
+      <div class="bio-card">
+        <span class="rotulo rotulo-depois">Proposta</span>
+        <div class="bio-mock">
+          <div class="nome-perfil">AFL &middot; Loca&ccedil;&atilde;o de Equipamentos | Barreiras-BA</div>
+          <div class="user">@afl.locacoes <span style="color:#666">(sugest&atilde;o &mdash; verificar disponibilidade)</span></div>
+          &#127959;&#65039; Betoneira, andaime, balancim, compactador e mais<br>
+          &#128176; Di&aacute;ria, semana ou m&ecirc;s &mdash; pre&ccedil;o justo<br>
+          &#128666; Entrega r&aacute;pida na sua obra<br>
+          &#128071; Pe&ccedil;a seu or&ccedil;amento agora<br>
+          <span class="link">wa.me/5577999946195</span>
+        </div>
+        <p class="bio-obs">O campo &ldquo;nome&rdquo; passa a conter as palavras que o cliente digita na busca. A bio diz o que a AFL aluga, como cobra, onde atende e o que fazer &mdash; com link direto para o WhatsApp. Se o cliente preferir manter o @ atual, a mudan&ccedil;a do nome exibido j&aacute; resolve 80% da busca.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESTAQUES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Reestrutura&ccedil;&atilde;o &middot; Passo 2</div>
+      <div class="section-title">Destaques <em>padronizados</em></div>
+    </div>
+
+    <div class="destaques-wrap">
+      <p>Um conjunto &uacute;nico, sem repeti&ccedil;&atilde;o, com capas no mesmo padr&atilde;o visual (fundo escuro + &iacute;cone + nome em caixa alta). Ordem pensada no caminho do cliente: ver o que tem &rarr; ver pre&ccedil;o &rarr; entender como alugar &rarr; confiar &rarr; achar a loja.</p>
+      <div class="destaques-row">
+        <div class="destaque-item"><div class="destaque-circ">&#128295;</div><div class="destaque-nome">Dispon&iacute;veis</div></div>
+        <div class="destaque-item"><div class="destaque-circ">&#127963;&#65039;</div><div class="destaque-nome">Betoneiras</div></div>
+        <div class="destaque-item"><div class="destaque-circ">&#129521;</div><div class="destaque-nome">Andaimes</div></div>
+        <div class="destaque-item"><div class="destaque-circ">&#9881;&#65039;</div><div class="destaque-nome">Balancins</div></div>
+        <div class="destaque-item"><div class="destaque-circ">&#128178;</div><div class="destaque-nome">Pre&ccedil;os</div></div>
+        <div class="destaque-item"><div class="destaque-circ">&#128221;</div><div class="destaque-nome">Como alugar</div></div>
+        <div class="destaque-item"><div class="destaque-circ">&#128205;</div><div class="destaque-nome">Nossa loja</div></div>
+      </div>
+      <p style="margin-top:14px; font-size:0.78rem; color:var(--cinza-claro);">A&ccedil;&atilde;o imediata: unir &ldquo;BETONEIRAS&rdquo; e &ldquo;Betoneira&rdquo; em um s&oacute; destaque e renomear o destaque sem t&iacute;tulo. &ldquo;Como alugar&rdquo; &eacute; novo: 3 telas simples &mdash; escolheu, chamou no WhatsApp, recebeu na obra.</p>
+    </div>
+  </div>
+
+  <!-- FIXADOS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Reestrutura&ccedil;&atilde;o &middot; Passo 3</div>
+      <div class="section-title">Os 3 posts <em>fixados</em> certos</div>
+    </div>
+
+    <div class="fixados-grid">
+      <div class="fixado-card">
+        <div class="fixado-num">1</div>
+        <h4>Quem somos</h4>
+        <p>A foto da fachada com os s&oacute;cios (j&aacute; existe e &eacute; boa) com legenda contando a hist&oacute;ria da AFL em 3 linhas: quem s&atilde;o, o que alugam, onde ficam. Substitui os dois posts de logo.</p>
+      </div>
+      <div class="fixado-card">
+        <div class="fixado-num">2</div>
+        <h4>Cat&aacute;logo com pre&ccedil;os</h4>
+        <p>Carrossel com os equipamentos mais pedidos e o valor da di&aacute;ria de cada um. &Eacute; o post que o cliente salva e manda para o mestre de obras.</p>
+      </div>
+      <div class="fixado-card">
+        <div class="fixado-num">3</div>
+        <h4>Prova de entrega</h4>
+        <p>V&iacute;deo ou fotos de equipamento chegando em obra de cliente real. Quem v&ecirc; entende: eles entregam mesmo, e r&aacute;pido.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PADRAO DE FEED -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Reestrutura&ccedil;&atilde;o &middot; Passo 4</div>
+      <div class="section-title">Regras do novo <em>feed</em></div>
+    </div>
+
+    <div class="regras-lista">
+      <div class="regra">
+        <div class="regra-icone">&#127912;</div>
+        <div>
+          <h4>Um padr&atilde;o visual s&oacute;</h4>
+          <p>Todas as artes no mesmo estilo: fundo escuro, destaque em uma &uacute;nica cor de apoio, logo sempre no mesmo canto. Nada de alternar entre arte amarela, laranja e logo preta.</p>
+        </div>
+      </div>
+      <div class="regra">
+        <div class="regra-icone">&#128247;</div>
+        <div>
+          <h4>Foto crua nunca vai sozinha</h4>
+          <p>Foto real de equipamento sempre recebe uma faixa com o nome do equipamento e o valor da di&aacute;ria. A foto prova, a faixa vende.</p>
+        </div>
+      </div>
+      <div class="regra">
+        <div class="regra-icone">&#127909;</div>
+        <div>
+          <h4>Reels &eacute; prioridade</h4>
+          <p>Com 108 seguidores, &eacute; o v&iacute;deo que alcan&ccedil;a gente nova. Conte&uacute;do seguindo o padr&atilde;o 3-1-1 da ADS: a cada 5 conte&uacute;dos, 3 para alcan&ccedil;ar, 1 para aproximar, 1 para vender. Detalhado no calend&aacute;rio de conte&uacute;do.</p>
+        </div>
+      </div>
+      <div class="regra">
+        <div class="regra-icone">&#128172;</div>
+        <div>
+          <h4>Toda legenda termina com um convite</h4>
+          <p>&ldquo;Chama no WhatsApp e garante pra sua obra&rdquo; &mdash; sempre com o n&uacute;mero. Post sem convite &eacute; vitrine sem porta.</p>
+        </div>
+      </div>
+      <div class="regra">
+        <div class="regra-icone">&#128230;</div>
+        <div>
+          <h4>Logo &eacute; assinatura, n&atilde;o publica&ccedil;&atilde;o</h4>
+          <p>A logo aparece em todas as artes como carimbo, mas nunca mais como post sozinha. Post de logo n&atilde;o informa pre&ccedil;o, n&atilde;o mostra equipamento e n&atilde;o gera conversa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">M&atilde;o na massa</div>
+      <div class="section-title">Ordem de <em>implementa&ccedil;&atilde;o</em></div>
+    </div>
+
+    <div class="check-lista">
+      <div class="check-item"><span class="check-fase">Semana 1</span> Atualizar nome exibido, bio e link do WhatsApp (efeito imediato na busca)</div>
+      <div class="check-item"><span class="check-fase">Semana 1</span> Unificar destaques duplicados e renomear os existentes</div>
+      <div class="check-item"><span class="check-fase">Semana 1</span> Trocar os 3 fixados: quem somos + cat&aacute;logo com pre&ccedil;os + prova de entrega</div>
+      <div class="check-item"><span class="check-fase">Semana 2</span> Criar capas padronizadas para todos os destaques</div>
+      <div class="check-item"><span class="check-fase">Semana 2</span> Definir o padr&atilde;o visual &uacute;nico das artes e aplicar nos pr&oacute;ximos posts</div>
+      <div class="check-item"><span class="check-fase">Semana 2</span> Gravar o destaque &ldquo;Como alugar&rdquo; (3 telas simples)</div>
+      <div class="check-item"><span class="check-fase">Semana 3</span> Iniciar o calend&aacute;rio de conte&uacute;do 3-1-1 (Reels + Stories)</div>
+      <div class="check-item"><span class="check-fase">Cont&iacute;nuo</span> Toda foto de equipamento novo entra no destaque &ldquo;Dispon&iacute;veis&rdquo; no mesmo dia</div>
+    </div>
+  </div>
+
+  <!-- PRINT DE REFERENCIA -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Registro</div>
+      <div class="section-title">Perfil em <em>19/11/2026</em></div>
+    </div>
+    <div class="print-wrap">
+      <img src="../REFERENCIAS/instagram-atual-2026-11-19-web.jpg" alt="Instagram da AFL em 19 de novembro de 2026" width="640" height="2281" loading="lazy" style="height:auto;">
+      <p>Captura do perfil @avante_ferramentas_locadora01 antes da reestrutura&ccedil;&atilde;o &mdash; base de compara&ccedil;&atilde;o para os pr&oacute;ximos relat&oacute;rios.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Review do Instagram &mdash; AFL &mdash; 19/11/2026</div>
+</div>
+
+</body>
+</html>
