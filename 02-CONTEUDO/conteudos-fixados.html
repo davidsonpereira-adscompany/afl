@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Os 3 conteúdos fixados do perfil da AFL prontos para publicar: roteiro do vídeo Quem Somos, carrossel de catálogo com preços e guia da prova de entrega.">
+<title>Conteúdos Fixados &mdash; AFL | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --preto: #060606;
+    --cinza-card: #141414;
+    --cinza-claro: #888;
+    --cinza-border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --verde: #22C55E;
+    --amarelo: #FFC400;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--preto); color: var(--branco); font-family: var(--sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  .top-bar { background: rgba(10,10,10,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--cinza-border); padding: 14px 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; }
+  .top-bar-name { font-family: var(--serif); font-size: 0.95rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+  .top-bar-name em { font-style: italic; color: var(--laranja); }
+  .btn-voltar { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--laranja); text-decoration: none; border: 1px solid rgba(255,92,0,0.25); padding: 8px 18px; border-radius: 20px; transition: all 0.3s; }
+  .btn-voltar:hover { background: var(--laranja); color: #fff; }
+
+  .hero { padding: 76px 32px 52px; text-align: center; position: relative; overflow: hidden; background: linear-gradient(180deg, #0A0705 0%, var(--preto) 100%); }
+  .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(255,92,0,0.06) 0%, transparent 65%); pointer-events: none; }
+  .hero-tag { display: inline-block; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--laranja); margin-bottom: 20px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 400; line-height: 1.2; margin-bottom: 12px; }
+  .hero h1 em { font-style: italic; color: var(--laranja); }
+  .hero-line { width: 60px; height: 2px; background: var(--laranja); margin: 22px auto; }
+  .hero p { font-size: 0.95rem; color: var(--cinza-claro); font-weight: 300; max-width: 640px; margin: 0 auto; line-height: 1.7; }
+
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 32px 90px; }
+  .section { margin-top: 70px; }
+  .section-header { margin-bottom: 28px; }
+  .section-tag { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--laranja); margin-bottom: 8px; }
+  .section-title { font-family: var(--serif); font-size: clamp(1.4rem, 3.5vw, 1.9rem); font-weight: 400; }
+  .section-title em { font-style: italic; color: var(--laranja); }
+  .section-desc { color: var(--cinza-claro); font-weight: 300; font-size: 0.92rem; max-width: 720px; margin-top: 10px; }
+
+  .card { background: var(--cinza-card); border: 1px solid var(--cinza-border); border-radius: 16px; padding: 28px 30px; margin-top: 18px; }
+  .card h3 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--amarelo); margin-bottom: 14px; }
+
+  /* roteiro */
+  .cena { display: grid; grid-template-columns: 110px 1fr; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--cinza-border); }
+  .cena:last-child { border-bottom: none; }
+  .cena-tempo { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--laranja); text-transform: uppercase; padding-top: 3px; }
+  .cena-tempo small { display:block; color: var(--cinza-claro); font-weight: 400; letter-spacing: 0; text-transform: none; margin-top: 4px; }
+  .cena-body h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+  .cena-body p { font-size: 0.88rem; color: #BBB; font-weight: 300; }
+  .fala { background: #0D0D10; border-left: 3px solid var(--amarelo); border-radius: 0 10px 10px 0; padding: 12px 16px; margin-top: 10px; font-size: 0.92rem; font-style: italic; color: var(--branco); }
+
+  .check-list { list-style: none; margin-top: 6px; }
+  .check-list li { padding: 9px 0 9px 28px; position: relative; font-size: 0.9rem; color: #CCC; font-weight: 300; border-bottom: 1px solid var(--cinza-border); }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
+
+  .copy-box { background: #0D0D10; border: 1px dashed rgba(255,196,0,0.35); border-radius: 12px; padding: 18px 20px; margin-top: 14px; font-size: 0.92rem; color: #DDD; white-space: pre-line; font-weight: 300; }
+  .copy-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amarelo); margin-top: 18px; }
+
+  /* carrossel */
+  .slides-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 22px; }
+  @media (max-width: 860px) { .slides-grid { grid-template-columns: repeat(2, 1fr); } }
+  .slide-card { background: var(--cinza-card); border: 1px solid var(--cinza-border); border-radius: 14px; overflow: hidden; text-align: center; }
+  .slide-card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; background: #0D0D10; }
+  .slide-info { padding: 12px 12px 16px; }
+  .slide-num { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; color: var(--laranja); text-transform: uppercase; }
+  .slide-name { font-size: 0.82rem; font-weight: 600; margin: 4px 0 10px; }
+  .btn-baixar { display: inline-block; background: var(--amarelo); color: #0A0A0C; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; padding: 8px 18px; border-radius: 18px; transition: all 0.25s; }
+  .btn-baixar:hover { background: #FFD84D; }
+
+  .nota { background: rgba(255,196,0,0.07); border: 1px solid rgba(255,196,0,0.2); border-radius: 12px; padding: 16px 20px; margin-top: 18px; font-size: 0.88rem; color: #DDC; font-weight: 300; }
+  .nota strong { color: var(--amarelo); }
+
+  .passos { counter-reset: passo; list-style: none; margin-top: 10px; }
+  .passos li { counter-increment: passo; padding: 12px 0 12px 44px; position: relative; font-size: 0.9rem; color: #CCC; font-weight: 300; border-bottom: 1px solid var(--cinza-border); }
+  .passos li:last-child { border-bottom: none; }
+  .passos li::before { content: counter(passo); position: absolute; left: 0; top: 10px; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,92,0,0.12); border: 1px solid rgba(255,92,0,0.4); color: var(--laranja); font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 0 18px 70px; }
+    .hero { padding: 56px 18px 42px; }
+    .card { padding: 20px 18px; }
+    .cena { grid-template-columns: 1fr; gap: 6px; }
+    .top-bar { padding: 12px 18px; }
+  }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-name">AFL &middot; <em>ADS Company</em></div>
+  <a class="btn-voltar" href="../index.html">&larr; Voltar &agrave; Central</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Instagram &middot; Reestrutura&ccedil;&atilde;o &middot; Passo 3</div>
+  <h1>Os 3 conte&uacute;dos <em>fixados</em>, prontos</h1>
+  <div class="hero-line"></div>
+  <p>Tudo o que precisa para trocar os posts fixados do perfil: roteiro completo do v&iacute;deo &ldquo;Quem somos&rdquo;, as artes do cat&aacute;logo com pre&ccedil;os para baixar e publicar, e o guia da prova de entrega. Legendas prontas para copiar e colar.</p>
+</div>
+
+<div class="wrap">
+
+  <!-- ===== FIXADO 1 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Fixado 1 &middot; Os s&oacute;cios gravam</div>
+      <div class="section-title">V&iacute;deo <em>&ldquo;Quem somos&rdquo;</em> &mdash; roteiro completo</div>
+      <p class="section-desc">V&iacute;deo vertical de at&eacute; 30 segundos, gravado na frente da loja. N&atilde;o precisa decorar palavra por palavra &mdash; o importante &eacute; falar olhando para a c&acirc;mera, como numa conversa. Grave 3 vezes e escolha a melhor.</p>
+    </div>
+
+    <div class="card">
+      <h3>Roteiro cena a cena</h3>
+      <div class="cena">
+        <div class="cena-tempo">0&ndash;4s<small>Gancho</small></div>
+        <div class="cena-body">
+          <h4>Um dos s&oacute;cios, de frente para a c&acirc;mera, na porta da loja</h4>
+          <p>Come&ccedil;ar j&aacute; falando, sem enrola&ccedil;&atilde;o. &Eacute; o que segura a pessoa no v&iacute;deo.</p>
+          <div class="fala">&ldquo;Vai come&ccedil;ar uma obra em Barreiras? Antes de comprar equipamento, me escuta dez segundos.&rdquo;</div>
+        </div>
+      </div>
+      <div class="cena">
+        <div class="cena-tempo">4&ndash;12s<small>Quem somos</small></div>
+        <div class="cena-body">
+          <h4>Os dois s&oacute;cios juntos; c&acirc;mera abre mostrando a fachada</h4>
+          <p>Apresenta&ccedil;&atilde;o r&aacute;pida, com nome e sobrenome. Gente de verdade gera confian&ccedil;a.</p>
+          <div class="fala">&ldquo;Aqui &eacute; [nome] e [nome], da AFL &mdash; Avante Ferramentas Locadora, aqui em Barreiras.&rdquo;</div>
+        </div>
+      </div>
+      <div class="cena">
+        <div class="cena-tempo">12&ndash;22s<small>O que tem</small></div>
+        <div class="cena-body">
+          <h4>Caminhada r&aacute;pida pelo p&aacute;tio mostrando os equipamentos</h4>
+          <p>Cortes curtos: betoneira, andaime, balancim, martelete, compactador. Pode ser a voz por cima das imagens.</p>
+          <div class="fala">&ldquo;Betoneira, andaime, balancim, martelete, compactador&hellip; tudo pronto para alugar por di&aacute;ria, semana ou m&ecirc;s. Sem precisar comprar.&rdquo;</div>
+        </div>
+      </div>
+      <div class="cena">
+        <div class="cena-tempo">22&ndash;30s<small>Chamada</small></div>
+        <div class="cena-body">
+          <h4>De volta para a c&acirc;mera, os dois juntos</h4>
+          <p>Fechar com a a&ccedil;&atilde;o que queremos: chamar no WhatsApp.</p>
+          <div class="fala">&ldquo;A gente entrega na sua obra. Chama no WhatsApp &mdash; o link t&aacute; aqui no perfil.&rdquo;</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Dicas de grava&ccedil;&atilde;o</h3>
+      <ul class="check-list">
+        <li>Gravar na vertical (9:16), com o celular na altura dos olhos &mdash; pode ser um segurando para o outro.</li>
+        <li>Melhor hor&aacute;rio: in&iacute;cio da manh&atilde; ou fim de tarde, com o sol iluminando o rosto (nunca atr&aacute;s de voc&ecirc;s).</li>
+        <li>Falar como numa conversa, sem ler. Errou? Continua &mdash; natural vende mais que perfeito.</li>
+        <li>Se poss&iacute;vel, mostrar um equipamento funcionando (betoneira girando, por exemplo).</li>
+        <li>Ao publicar, ativar a legenda autom&aacute;tica do Instagram &mdash; muita gente assiste sem som.</li>
+        <li>Capa do Reels: o frame dos dois na frente da loja.</li>
+      </ul>
+      <div class="copy-label">Legenda pronta (copiar e colar)</div>
+      <div class="copy-box">Muita gente ainda compra equipamento para usar uma semana. 🏗️
+
+Aqui na AFL voc&ecirc; aluga betoneira, andaime, balancim, martelete e muito mais &mdash; por di&aacute;ria, semana ou m&ecirc;s &mdash; e recebe na sua obra.
+
+📍 Barreiras-BA
+👇 Or&ccedil;amento r&aacute;pido no WhatsApp: link no perfil
+
+#barreiras #obra #construcaocivil #locacaodeequipamentos #reforma</div>
+    </div>
+  </div>
+
+  <!-- ===== FIXADO 2 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Fixado 2 &middot; Pronto para publicar</div>
+      <div class="section-title">Carrossel <em>cat&aacute;logo com pre&ccedil;os</em></div>
+      <p class="section-desc">As 8 artes abaixo j&aacute; est&atilde;o no formato certo do feed (1080&times;1350). &Eacute; s&oacute; baixar no celular, publicar como carrossel na ordem indicada e colar a legenda. &Eacute; o post que o cliente salva e manda para o mestre de obras.</p>
+    </div>
+
+    <div class="slides-grid">
+      <div class="slide-card">
+        <img src="catalogo/slide-01-thumb.jpg" alt="Slide 1 — capa do catálogo" width="240" height="300" loading="lazy">
+        <div class="slide-info">
+          <div class="slide-num">Slide 1</div>
+          <div class="slide-name">Capa do cat&aacute;logo</div>
+          <a class="btn-baixar" href="catalogo/slide-01.jpg" download="afl-catalogo-01.jpg">Baixar</a>
+        </div>
+      </div>
+      <div class="slide-card">
+        <img src="catalogo/slide-02-thumb.jpg" alt="Slide 2 — betoneira" width="240" height="300" loading="lazy">
+        <div class="slide-info">
+          <div class="slide-num">Slide 2</div>
+          <div class="slide-name">Betoneira 400L</div>
+          <a class="btn-baixar" href="catalogo/slide-02.jpg" download="afl-catalogo-02.jpg">Baixar</a>
+        </div>
+      </div>
+      <div class="slide-card">
+        <img src="catalogo/slide-03-thumb.jpg" alt="Slide 3 — martelete" width="240" height="300" loading="lazy">
+        <div class="slide-info">
+          <div class="slide-num">Slide 3</div>
+          <div class="slide-name">Martelete 6kg</div>
+          <a class="btn-baixar" href="catalogo/slide-03.jpg" download="afl-catalogo-03.jpg">Baixar</a>
+        </div>
+      </div>
+      <div class="slide-card">
+        <img src="catalogo/slide-04-thumb.jpg" alt="Slide 4 — compactador de solo" width="240" height="300" loading="lazy">
+        <div class="slide-info">
+          <div class="slide-num">Slide 4</div>
+          <div class="slide-name">Compactador de solo</div>
+          <a class="btn-baixar" href="catalogo/slide-04.jpg" download="afl-catalogo-04.jpg">Baixar</a>
+        </div>
+      </div>
+      <div class="slide-card">
+        <img src="catalogo/slide-05-thumb.jpg" alt="Slide 5 — perfurador de solo" width="240" height="300" loading="lazy">
+        <div class="slide-info">
+          <div class="slide-num">Slide 5</div>
+          <div class="slide-name">Perfurador de solo</div>
+          <a class="btn-baixar" href="catalogo/slide-05.jpg" download="afl-catalogo-05.jpg">Baixar</a>
+        </div>
+      </div>
+      <div class="slide-card">
+        <img src="catalogo/slide-06-thumb.jpg" alt="Slide 6 — esmerilhadeira" width="240" height="300" loading="lazy">
+        <div class="slide-info">
+          <div class="slide-num">Slide 6</div>
+          <div class="slide-name">Esmerilhadeira</div>
+          <a class="btn-baixar" href="catalogo/slide-06.jpg" download="afl-catalogo-06.jpg">Baixar</a>
+        </div>
+      </div>
+      <div class="slide-card">
+        <img src="catalogo/slide-07-thumb.jpg" alt="Slide 7 — balancim elétrico" width="240" height="300" loading="lazy">
+        <div class="slide-info">
+          <div class="slide-num">Slide 7</div>
+          <div class="slide-name">Balancim el&eacute;trico</div>
+          <a class="btn-baixar" href="catalogo/slide-07.jpg" download="afl-catalogo-07.jpg">Baixar</a>
+        </div>
+      </div>
+      <div class="slide-card">
+        <img src="catalogo/slide-08-thumb.jpg" alt="Slide 8 — chamada final" width="240" height="300" loading="lazy">
+        <div class="slide-info">
+          <div class="slide-num">Slide 8</div>
+          <div class="slide-name">Chamada final</div>
+          <a class="btn-baixar" href="catalogo/slide-08.jpg" download="afl-catalogo-08.jpg">Baixar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="nota"><strong>Importante:</strong> publicar as 8 artes juntas, num &uacute;nico post de carrossel, na ordem acima. Os pre&ccedil;os vieram das artes atuais do perfil &mdash; se algum valor mudou, &eacute; s&oacute; avisar que a ADS atualiza a arte em minutos.</div>
+
+    <div class="card">
+      <div class="copy-label" style="margin-top:0">Legenda pronta (copiar e colar)</div>
+      <div class="copy-box">Tabela na m&atilde;o! 📋
+
+Salva esse post e manda para o seu mestre de obras: pre&ccedil;o de di&aacute;ria dos equipamentos mais pedidos da AFL.
+
+Alugou, a gente entrega na sua obra. 🚚
+
+📍 Barreiras-BA
+👇 Or&ccedil;amento r&aacute;pido no WhatsApp: link no perfil
+
+#barreiras #obra #construcaocivil #locacaodeequipamentos #betoneira #andaime</div>
+    </div>
+  </div>
+
+  <!-- ===== FIXADO 3 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Fixado 3 &middot; Grava na pr&oacute;xima entrega</div>
+      <div class="section-title">Prova de <em>entrega</em></div>
+      <p class="section-desc">N&atilde;o precisa produzir nada: na pr&oacute;xima entrega em obra de cliente, &eacute; s&oacute; filmar com o celular seguindo o checklist abaixo. Reels de 15 a 20 segundos com cortes r&aacute;pidos. Quem v&ecirc; entende na hora: eles entregam mesmo, e r&aacute;pido.</p>
+    </div>
+
+    <div class="card">
+      <h3>O que filmar (4 takes de 5 segundos)</h3>
+      <ul class="check-list">
+        <li><strong>Take 1</strong> &mdash; o equipamento sendo carregado no caminh&atilde;o, na loja.</li>
+        <li><strong>Take 2</strong> &mdash; o caminh&atilde;o chegando na obra do cliente.</li>
+        <li><strong>Take 3</strong> &mdash; o equipamento descendo / sendo posicionado na obra.</li>
+        <li><strong>Take 4</strong> &mdash; o equipamento funcionando, com a obra ao fundo (se o cliente topar, um aperto de m&atilde;o fecha bem).</li>
+      </ul>
+      <div class="nota"><strong>Antes de publicar:</strong> pedir autoriza&ccedil;&atilde;o do cliente que aparecer no v&iacute;deo ou cuja obra for mostrada. Um &ldquo;posso postar?&rdquo; no WhatsApp resolve.</div>
+      <div class="copy-label">Legenda pronta (copiar e colar)</div>
+      <div class="copy-box">Alugou de manh&atilde;, t&aacute; na obra &agrave; tarde. 🚚
+
+&Eacute; assim que funciona na AFL: voc&ecirc; chama no WhatsApp, fecha o or&ccedil;amento e a gente leva o equipamento at&eacute; a sua obra.
+
+Sem frete de surpresa, sem enrola&ccedil;&atilde;o.
+
+📍 Barreiras-BA
+👇 Link no perfil
+
+#barreiras #obra #construcaocivil #locacaodeequipamentos</div>
+    </div>
+  </div>
+
+  <!-- ===== COMO FIXAR ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Passo final</div>
+      <div class="section-title">Como <em>fixar</em> no perfil</div>
+    </div>
+    <div class="card">
+      <ol class="passos">
+        <li>Publicar os 3 conte&uacute;dos normalmente (o v&iacute;deo como Reels, o cat&aacute;logo como carrossel, a prova de entrega como Reels).</li>
+        <li>Abrir cada post, tocar nos tr&ecirc;s pontinhos (&#8943;) no canto superior direito.</li>
+        <li>Tocar em <strong>&ldquo;Fixar no seu perfil&rdquo;</strong>. O Instagram permite at&eacute; 3 fixados.</li>
+        <li>Os dois posts antigos de logo ser&atilde;o desafixados automaticamente ao fixar os novos &mdash; se n&atilde;o forem, desafixar pelos mesmos tr&ecirc;s pontinhos.</li>
+        <li>Ordem no topo do feed: Quem somos &rarr; Cat&aacute;logo &rarr; Prova de entrega (fixar nessa ordem invertida: o &uacute;ltimo fixado aparece primeiro).</li>
+      </ol>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Planejamento de tráfego pago da AFL para novembro e dezembro: reta final da Black Friday, campanha de Natal com o Papai Noel da Obra e virada de ano.">
+<title>Tr&aacute;fego Pago Nov/Dez &mdash; AFL | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --preto: #060606;
+    --cinza-card: #141414;
+    --cinza-claro: #888;
+    --cinza-border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --verde: #22C55E;
+    --amarelo: #FFC400;
+    --vermelho: #EF4444;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--preto); color: var(--branco); font-family: var(--sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  .top-bar { background: rgba(10,10,10,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--cinza-border); padding: 14px 32px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; }
+  .top-bar-name { font-family: var(--serif); font-size: 0.95rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+  .top-bar-name em { font-style: italic; color: var(--laranja); }
+  .btn-voltar { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--laranja); text-decoration: none; border: 1px solid rgba(255,92,0,0.25); padding: 8px 18px; border-radius: 20px; transition: all 0.3s; }
+  .btn-voltar:hover { background: var(--laranja); color: #fff; }
+
+  .hero { padding: 76px 32px 52px; text-align: center; position: relative; overflow: hidden; background: linear-gradient(180deg, #0A0705 0%, var(--preto) 100%); }
+  .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(255,92,0,0.06) 0%, transparent 65%); pointer-events: none; }
+  .hero-tag { display: inline-block; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--laranja); margin-bottom: 20px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 400; line-height: 1.2; margin-bottom: 12px; }
+  .hero h1 em { font-style: italic; color: var(--laranja); }
+  .hero-line { width: 60px; height: 2px; background: var(--laranja); margin: 22px auto; }
+  .hero p { font-size: 0.95rem; color: var(--cinza-claro); font-weight: 300; max-width: 660px; margin: 0 auto; line-height: 1.7; }
+
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 32px 90px; }
+  .section { margin-top: 70px; }
+  .section-header { margin-bottom: 26px; }
+  .section-tag { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--laranja); margin-bottom: 8px; }
+  .section-title { font-family: var(--serif); font-size: clamp(1.4rem, 3.5vw, 1.9rem); font-weight: 400; }
+  .section-title em { font-style: italic; color: var(--laranja); }
+  .section-desc { color: var(--cinza-claro); font-weight: 300; font-size: 0.92rem; max-width: 740px; margin-top: 10px; }
+
+  .card { background: var(--cinza-card); border: 1px solid var(--cinza-border); border-radius: 16px; padding: 28px 30px; margin-top: 18px; }
+  .card h3 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--amarelo); margin-bottom: 14px; }
+  .card p { font-size: 0.9rem; color: #CCC; font-weight: 300; }
+
+  .timeline { margin-top: 24px; border-left: 2px solid rgba(255,92,0,0.3); padding-left: 28px; }
+  .tl-item { position: relative; padding-bottom: 34px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before { content: ''; position: absolute; left: -35px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--laranja); box-shadow: 0 0 0 4px rgba(255,92,0,0.15); }
+  .tl-data { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laranja); }
+  .tl-item h4 { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; margin: 6px 0 8px; }
+  .tl-item p { font-size: 0.88rem; color: #BBB; font-weight: 300; max-width: 680px; }
+
+  .tabela { width: 100%; border-collapse: collapse; margin-top: 14px; }
+  .tabela th { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cinza-claro); text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--cinza-border); }
+  .tabela td { font-size: 0.88rem; font-weight: 300; color: #DDD; padding: 12px 14px; border-bottom: 1px solid var(--cinza-border); vertical-align: top; }
+  .tabela tr:last-child td { border-bottom: none; }
+  .tabela td strong { color: var(--amarelo); font-weight: 600; }
+  .tabela-scroll { overflow-x: auto; }
+
+  .opcao { display: grid; grid-template-columns: 44px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--cinza-border); }
+  .opcao:last-child { border-bottom: none; }
+  .opcao-letra { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,196,0,0.12); border: 1px solid rgba(255,196,0,0.4); color: var(--amarelo); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .opcao h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+  .opcao p { font-size: 0.86rem; color: #BBB; font-weight: 300; }
+  .tag-rec { display: inline-block; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--verde); border: 1px solid rgba(34,197,94,0.4); border-radius: 12px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+
+  .criativo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+  @media (max-width: 820px) { .criativo-grid { grid-template-columns: 1fr; } }
+  .criativo-card { background: var(--cinza-card); border: 1px solid var(--cinza-border); border-radius: 14px; padding: 22px; }
+  .criativo-num { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--laranja); }
+  .criativo-card h4 { font-family: var(--serif); font-size: 1.05rem; font-weight: 400; margin: 8px 0 8px; color: var(--amarelo); }
+  .criativo-card p { font-size: 0.84rem; color: #BBB; font-weight: 300; }
+
+  .nota { background: rgba(255,196,0,0.07); border: 1px solid rgba(255,196,0,0.2); border-radius: 12px; padding: 16px 20px; margin-top: 18px; font-size: 0.88rem; color: #DDC; font-weight: 300; }
+  .nota strong { color: var(--amarelo); }
+  .nota-red { background: rgba(239,68,68,0.07); border-color: rgba(239,68,68,0.25); }
+  .nota-red strong { color: var(--vermelho); }
+
+  .check-list { list-style: none; margin-top: 6px; }
+  .check-list li { padding: 9px 0 9px 28px; position: relative; font-size: 0.9rem; color: #CCC; font-weight: 300; border-bottom: 1px solid var(--cinza-border); }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
+
+  .copy-box { background: #0D0D10; border: 1px dashed rgba(255,196,0,0.35); border-radius: 12px; padding: 18px 20px; margin-top: 14px; font-size: 0.92rem; color: #DDD; white-space: pre-line; font-weight: 300; }
+  .copy-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amarelo); margin-top: 18px; }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 0 18px 70px; }
+    .hero { padding: 56px 18px 42px; }
+    .card { padding: 20px 18px; }
+    .top-bar { padding: 12px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-name">AFL &middot; <em>ADS Company</em></div>
+  <a class="btn-voltar" href="../index.html">&larr; Voltar &agrave; Central</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Tr&aacute;fego Pago &middot; Meta Ads</div>
+  <h1>Planejamento <em>Novembro &amp; Dezembro</em></h1>
+  <div class="hero-line"></div>
+  <p>Tr&ecirc;s ondas de campanha at&eacute; a virada do ano: a reta final da Black Friday (27/11), o Natal com o <strong>Papai Noel da Obra</strong> e o empurr&atilde;o de ano novo. Todas as campanhas levam o cliente direto para o WhatsApp da AFL.</p>
+</div>
+
+<div class="wrap">
+
+  <!-- VISAO GERAL -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Vis&atilde;o geral</div>
+      <div class="section-title">As <em>3 ondas</em> do per&iacute;odo</div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-data">Onda 1 &middot; 24 a 30/11</div>
+        <h4>Black Friday da Obra</h4>
+        <p>Sete dias de oferta agressiva. A Black Friday &eacute; 27/11 e todo mundo est&aacute; em modo de compra &mdash; a AFL entra com a mensagem &ldquo;n&atilde;o compre, alugue&rdquo;: o cliente faz a obra gastando uma fra&ccedil;&atilde;o do pre&ccedil;o da ferramenta nova.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-data">Onda 2 &middot; 01 a 24/12</div>
+        <h4>Natal &mdash; Papai Noel da Obra 🎅</h4>
+        <p>O criativo quebra-padr&atilde;o do per&iacute;odo: um dos s&oacute;cios vestido de Papai Noel entregando equipamento na obra. Mensagem: &ldquo;casa pronta antes da fam&iacute;lia chegar&rdquo;. Ningu&eacute;m em Barreiras vai fazer algo parecido &mdash; &eacute; o tipo de an&uacute;ncio que vira coment&aacute;rio na cidade.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-data">Onda 3 &middot; 26/12 a 31/01</div>
+        <h4>Ano novo, obra nova</h4>
+        <p>Janeiro &eacute; m&ecirc;s de dinheiro contado (IPTU, material escolar) e de planos novos. O &acirc;ngulo &eacute; exatamente esse: come&ccedil;ar a reforma sem estourar o or&ccedil;amento, alugando em vez de comprar.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ONDA 1 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Onda 1 &middot; 24 a 30/11</div>
+      <div class="section-title">Black Friday <em>da Obra</em></div>
+      <p class="section-desc">Para rodar Black Friday precisa de uma condi&ccedil;&atilde;o real e simples de entender. Tr&ecirc;s op&ccedil;&otilde;es para o cliente escolher uma &mdash; a decis&atilde;o precisa sair at&eacute; <strong style="color:#F5F5F5">segunda, 23/11</strong>, para a campanha ir ao ar dia 24.</p>
+    </div>
+
+    <div class="card">
+      <h3>Oferta &mdash; escolher uma</h3>
+      <div class="opcao">
+        <div class="opcao-letra">A</div>
+        <div>
+          <h4>Semana pelo pre&ccedil;o de 5 di&aacute;rias <span class="tag-rec">Recomendada</span></h4>
+          <p>Alugou por 7 dias, paga 5. F&aacute;cil de comunicar, aumenta o tempo m&eacute;dio de loca&ccedil;&atilde;o e n&atilde;o derruba o pre&ccedil;o da di&aacute;ria avulsa.</p>
+        </div>
+      </div>
+      <div class="opcao">
+        <div class="opcao-letra">B</div>
+        <div>
+          <h4>Primeira loca&ccedil;&atilde;o com desconto</h4>
+          <p>Desconto (ex.: 20%) s&oacute; para quem nunca alugou na AFL. Boa para encher a base de clientes novos, mas exige controlar quem j&aacute; &eacute; cliente.</p>
+        </div>
+      </div>
+      <div class="opcao">
+        <div class="opcao-letra">C</div>
+        <div>
+          <h4>Entrega gr&aacute;tis na Black</h4>
+          <p>Qualquer loca&ccedil;&atilde;o fechada de 24 a 30/11 tem entrega e retirada gr&aacute;tis na obra. Simples e refor&ccedil;a o principal diferencial da AFL.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Estrutura da campanha</h3>
+      <div class="tabela-scroll">
+      <table class="tabela">
+        <tr><th>Item</th><th>Defini&ccedil;&atilde;o</th></tr>
+        <tr><td><strong>Campanha</strong></td><td>[AFL] BLACK FRIDAY DA OBRA &mdash; objetivo: conversas no WhatsApp</td></tr>
+        <tr><td><strong>Per&iacute;odo</strong></td><td>24/11 &agrave;s 06h &rarr; 30/11 &agrave;s 23h59 (datas agendadas)</td></tr>
+        <tr><td><strong>P&uacute;blico</strong></td><td>Barreiras-BA + 40 km &middot; 25 a 60 anos &middot; aberto + interesses em constru&ccedil;&atilde;o, reforma e material de constru&ccedil;&atilde;o</td></tr>
+        <tr><td><strong>Or&ccedil;amento</strong></td><td>CBO &mdash; ver cen&aacute;rios de verba abaixo</td></tr>
+        <tr><td><strong>Destino</strong></td><td>WhatsApp da AFL, com mensagem autom&aacute;tica j&aacute; citando a oferta</td></tr>
+      </table>
+      </div>
+    </div>
+
+    <div class="criativo-grid">
+      <div class="criativo-card">
+        <div class="criativo-num">Criativo 1</div>
+        <h4>V&iacute;deo do s&oacute;cio</h4>
+        <p>15 segundos, celular na m&atilde;o, no p&aacute;tio: &ldquo;Black Friday na AFL &eacute; assim: [oferta]. S&oacute; at&eacute; domingo. Chama no WhatsApp.&rdquo; An&uacute;ncio com gente de verdade costuma ser o mais barato.</p>
+      </div>
+      <div class="criativo-card">
+        <div class="criativo-num">Criativo 2</div>
+        <h4>Card da oferta</h4>
+        <p>Arte no padr&atilde;o do brandbook (grafite + amarelo) com a condi&ccedil;&atilde;o em destaque e selo de Black Friday. A ADS produz assim que a oferta for escolhida.</p>
+      </div>
+      <div class="criativo-card">
+        <div class="criativo-num">Criativo 3</div>
+        <h4>Carrossel de pre&ccedil;os</h4>
+        <p>O cat&aacute;logo com pre&ccedil;os adaptado com a faixa da oferta. Quem compara pre&ccedil;o fecha r&aacute;pido &mdash; e o carrossel j&aacute; est&aacute; pronto.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="copy-label" style="margin-top:0">Copy principal do an&uacute;ncio</div>
+      <div class="copy-box">🔨 BLACK FRIDAY DA OBRA &mdash; s&oacute; at&eacute; domingo (30/11)
+
+N&atilde;o compre ferramenta para usar uma semana. Na AFL voc&ecirc; aluga betoneira, andaime, balancim, martelete e muito mais &mdash; e nesta semana: [OFERTA ESCOLHIDA].
+
+🚚 Entrega na sua obra em Barreiras e regi&atilde;o
+💬 Chama no WhatsApp e garante antes de acabar</div>
+    </div>
+  </div>
+
+  <!-- ONDA 2 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Onda 2 &middot; 01 a 24/12</div>
+      <div class="section-title">Natal &mdash; <em>Papai Noel da Obra</em></div>
+      <p class="section-desc">A ideia do per&iacute;odo: um dos s&oacute;cios vestido de Papai Noel nas fotos e v&iacute;deos da campanha. Humor + utilidade: todo mundo quer a casa pronta antes das festas, e a AFL &eacute; quem faz a obra andar.</p>
+    </div>
+
+    <div class="card">
+      <h3>Sess&atilde;o de fotos e v&iacute;deos &mdash; 1 hora resolve</h3>
+      <p style="margin-bottom:12px">Precisa de uma fantasia de Papai Noel (aluga ou compra, R$ 80&ndash;150) e de uma manh&atilde; no p&aacute;tio. Lista do que captar, tudo no mesmo dia:</p>
+      <ul class="check-list">
+        <li><strong>Foto 1</strong> &mdash; Papai Noel descarregando a betoneira do caminh&atilde;o.</li>
+        <li><strong>Foto 2</strong> &mdash; Papai Noel empurrando um carrinho com ferramentas, como se fosse o saco de presentes.</li>
+        <li><strong>Foto 3</strong> &mdash; Papai Noel de bra&ccedil;os cruzados na frente da loja, ao lado do s&oacute;cio com roupa normal.</li>
+        <li><strong>V&iacute;deo 1 (15s)</strong> &mdash; Papai Noel fala para a c&acirc;mera: &ldquo;Esse ano o presente &eacute; a casa pronta. Eu entrego o equipamento, voc&ecirc; termina a obra antes da fam&iacute;lia chegar. AFL, Barreiras.&rdquo;</li>
+        <li><strong>V&iacute;deo 2 (15s)</strong> &mdash; Papai Noel &ldquo;entregando&rdquo; o martelete na m&atilde;o de um cliente, os dois rindo &mdash; pode ser encenado com algu&eacute;m da equipe.</li>
+      </ul>
+      <div class="nota"><strong>Por que funciona:</strong> an&uacute;ncio local com humor pr&oacute;prio gera coment&aacute;rio, marca&ccedil;&atilde;o de amigo e compartilhamento &mdash; o algoritmo entrega mais barato e a cidade inteira passa a conhecer a AFL. O custo &eacute; uma fantasia.</div>
+    </div>
+
+    <div class="card">
+      <h3>Estrutura da campanha</h3>
+      <div class="tabela-scroll">
+      <table class="tabela">
+        <tr><th>Item</th><th>Defini&ccedil;&atilde;o</th></tr>
+        <tr><td><strong>Campanha</strong></td><td>[AFL] NATAL &mdash; PAPAI NOEL DA OBRA &mdash; objetivo: conversas no WhatsApp</td></tr>
+        <tr><td><strong>Per&iacute;odo</strong></td><td>01/12 &rarr; 24/12 ao meio-dia</td></tr>
+        <tr><td><strong>P&uacute;blico</strong></td><td>Mesmo da Onda 1 + p&uacute;blico de envolvimento com o perfil (quem interagiu nos &uacute;ltimos 30 dias)</td></tr>
+        <tr><td><strong>&Acirc;ngulo</strong></td><td>&ldquo;Casa pronta antes da fam&iacute;lia chegar&rdquo; &mdash; reta final de obra e reforma pr&eacute;-festas</td></tr>
+      </table>
+      </div>
+      <div class="copy-label">Copy principal do an&uacute;ncio</div>
+      <div class="copy-box">🎅 Esse ano, o bom velhinho entrega betoneira.
+
+A fam&iacute;lia chega dia 24 &mdash; e a sua obra, termina antes? Na AFL voc&ecirc; aluga o equipamento por di&aacute;ria, semana ou m&ecirc;s e recebe na obra no mesmo dia.
+
+🏠 Casa pronta para o Natal
+🚚 Entrega em Barreiras e regi&atilde;o
+💬 Chama o Papai Noel da Obra no WhatsApp</div>
+    </div>
+  </div>
+
+  <!-- ONDA 3 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Onda 3 &middot; 26/12 a 31/01</div>
+      <div class="section-title">Ano novo, <em>obra nova</em></div>
+      <p class="section-desc">Depois das festas o dinheiro fica curto &mdash; e &eacute; exatamente a&iacute; que alugar ganha de comprar. Campanha de sustenta&ccedil;&atilde;o, sem data de oferta, construindo o fluxo constante de or&ccedil;amentos no WhatsApp.</p>
+    </div>
+    <div class="card">
+      <h3>Estrutura da campanha</h3>
+      <div class="tabela-scroll">
+      <table class="tabela">
+        <tr><th>Item</th><th>Defini&ccedil;&atilde;o</th></tr>
+        <tr><td><strong>Campanha</strong></td><td>[AFL] SEMPRE LIGADO &mdash; objetivo: conversas no WhatsApp</td></tr>
+        <tr><td><strong>&Acirc;ngulo</strong></td><td>&ldquo;Comece a reforma sem estourar o or&ccedil;amento&rdquo; &mdash; compara&ccedil;&atilde;o aluguel &times; compra (ex.: betoneira nova R$ 3.000+ &times; di&aacute;ria R$ 100)</td></tr>
+        <tr><td><strong>Criativos</strong></td><td>V&iacute;deo &ldquo;quem somos&rdquo; dos s&oacute;cios + carrossel de pre&ccedil;os + card compara&ccedil;&atilde;o aluguel &times; compra</td></tr>
+        <tr><td><strong>Papel</strong></td><td>Vira a campanha fixa da AFL: o que der melhor resultado nas Ondas 1 e 2 continua aqui</td></tr>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERBA -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Investimento</div>
+      <div class="section-title">Cen&aacute;rios de <em>verba</em></div>
+      <p class="section-desc">Valores de an&uacute;ncio (pagos direto &agrave; Meta). Dois cen&aacute;rios para o cliente escolher &mdash; d&aacute; para come&ccedil;ar no b&aacute;sico e subir se os or&ccedil;amentos chegarem.</p>
+    </div>
+    <div class="card">
+      <div class="tabela-scroll">
+      <table class="tabela">
+        <tr><th>Per&iacute;odo</th><th>Cen&aacute;rio b&aacute;sico</th><th>Cen&aacute;rio forte</th></tr>
+        <tr><td><strong>Black Friday</strong> (24&ndash;30/11, 7 dias)</td><td>R$ 30/dia &middot; R$ 210</td><td>R$ 50/dia &middot; R$ 350</td></tr>
+        <tr><td><strong>Natal</strong> (01&ndash;24/12, 24 dias)</td><td>R$ 25/dia &middot; R$ 600</td><td>R$ 40/dia &middot; R$ 960</td></tr>
+        <tr><td><strong>Virada</strong> (26/12&ndash;31/01, 37 dias)</td><td>R$ 20/dia &middot; R$ 740</td><td>R$ 30/dia &middot; R$ 1.110</td></tr>
+        <tr><td><strong>Total do per&iacute;odo</strong></td><td><strong>&asymp; R$ 1.550</strong></td><td><strong>&asymp; R$ 2.420</strong></td></tr>
+      </table>
+      </div>
+      <div class="nota"><strong>Refer&ecirc;ncia de retorno:</strong> com uma di&aacute;ria m&eacute;dia de R$ 100 e loca&ccedil;&otilde;es que costumam durar v&aacute;rios dias, poucas loca&ccedil;&otilde;es fechadas por semana j&aacute; pagam a campanha. Um balancim alugado (a partir de R$ 1.500) paga o per&iacute;odo inteiro sozinho.</div>
+    </div>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Pr&oacute;ximos passos</div>
+      <div class="section-title">O que precisa <em>acontecer agora</em></div>
+    </div>
+    <div class="card">
+      <ul class="check-list">
+        <li><strong>At&eacute; 23/11 (cliente):</strong> escolher a oferta da Black Friday (A, B ou C) e o cen&aacute;rio de verba.</li>
+        <li><strong>At&eacute; 23/11 (cliente):</strong> confirmar o n&uacute;mero oficial de WhatsApp e o acesso &agrave; conta de an&uacute;ncios.</li>
+        <li><strong>24/11 (ADS):</strong> campanha da Black Friday no ar, com os 3 criativos.</li>
+        <li><strong>At&eacute; 28/11 (cliente):</strong> providenciar a fantasia e fazer a sess&atilde;o do Papai Noel da Obra (lista acima).</li>
+        <li><strong>01/12 (ADS):</strong> campanha de Natal no ar.</li>
+        <li><strong>Toda segunda (ADS):</strong> leitura dos n&uacute;meros e ajuste de criativo/verba.</li>
+      </ul>
+      <div class="nota nota-red"><strong>Aten&ccedil;&atilde;o ao prazo:</strong> a Black Friday &eacute; dia 27/11. Sem a oferta definida at&eacute; 23/11, a Onda 1 perde a janela &mdash; nesse caso a campanha estreia direto no Natal.</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
